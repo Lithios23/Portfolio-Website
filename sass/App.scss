@@ -1,0 +1,44 @@
+//variables
+$primary: #272727;
+$secondary: #E7CA63;
+
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+h1 {
+    font-size: 85px;
+}
+
+h2 {
+    font-size: 70px;
+}
+
+.App {
+    scroll-behavior: smooth;
+    overflow: auto;
+    scroll-snap-type: y mandatory;
+}
+
+section {
+    scroll-snap-align: start;
+}
+
+.title-line {
+    height: 16px;
+}
+
+.contact-icon {
+    transform: rotate(45deg);
+    width: 140px;
+    height: 140px;
+    transition-duration: 0.5s;
+
+    &:hover {
+        background-color: $secondary;
+        color: $primary !important;
+        transform: rotate(45deg) translate(-10px, -10px);
+    }
+}
