@@ -1,6 +1,7 @@
-import './css/App.css';
-import SectionTitle from './components/section-title'
+import './sass/App.scss';
+import SectionTitle from './components/section-title';
 import ContactIcon from './components/contact-icon';
+import ProjectsCarrousel from './components/projects-carrousel';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
@@ -55,7 +56,7 @@ function App() {
         
       </section>
       <section className='vh-100 bg-info'>
-        <SectionTitle title='Projects'/>
+        <ProjectsCarrousel projects={projects}/>
       </section>
       <section className='container-fluid vh-100 p-0 py-5'>
         <div className='row mx-0 h-100 d-flex align-items-end'>
