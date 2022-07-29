@@ -6,6 +6,7 @@ import Image from 'react-bootstrap/Image'
 
 export default function ProjectsCarrousel({projects}) {
   
+  let scrollLevel = 0;
   const proCont = React.createRef();
   let projectsContainer;
 
@@ -15,12 +16,19 @@ export default function ProjectsCarrousel({projects}) {
   })
 
   const ScrollUp = () => {
-    console.log(projectsContainer)
+    if (scrollLevel > 0){
+      scrollLevel--;
+      projectsContainer.scrollBy(0, -200)
+      console.log(projects[scrollLevel].title, projects[scrollLevel+1].title)
+    }
   }
   
   const ScrollDown = () => {
-    const projectsContainer = document.getElementById('projects-container');
-    
+    if (scrollLevel < projects.length-2){
+      scrollLevel++;
+      projectsContainer.scrollBy(0, 200)
+      console.log(projects[scrollLevel].title, projects[scrollLevel+1].title)
+    }
   }
   
   const projectsCards = projects.map((project, pos) => {

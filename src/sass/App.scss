@@ -60,6 +60,7 @@ section {
 #projects-container {
     overflow: scroll;
     scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
 
     div {
         height: 50%;

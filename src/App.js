@@ -61,10 +61,10 @@ function App() {
       </section>
       <section className='vh-100'>
         <Row className='h-100'>
-          <Col xs={{span: 7}} className='h-100 d-flex align-items-center position-relative'>
+          <Col xs="5" className='h-100 d-flex align-items-center position-relative'>
             <ProjectsTitle/>
           </Col>
-          <Col xs={{span: 4}} className='h-100 py-5'>
+          <Col xs="4" className='h-100 py-5'>
             <ProjectsCarrousel projects={projects}/>
           </Col>
         </Row>
