@@ -3,7 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Stack from 'react-bootstrap/Stack';
-import SectionTitle from './components/section-title';
+import {ContactTitle, ProjectsTitle} from './components/section-titles';
 import ContactIcon from './components/contact-icon';
 import ProjectsCarrousel from './components/projects-carrousel';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -61,8 +61,8 @@ function App() {
       </section>
       <section className='vh-100'>
         <Row className='h-100'>
-          <Col xs={{span: 4}} className='h-100'>
-            <SectionTitle title='Contact me!'/>
+          <Col xs={{span: 7}} className='h-100 d-flex align-items-center position-relative'>
+            <ProjectsTitle/>
           </Col>
           <Col xs={{span: 4}} className='h-100 py-5'>
             <ProjectsCarrousel projects={projects}/>
