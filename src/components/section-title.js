@@ -1,6 +1,7 @@
 import React from "react";
 
-export default function SectionTitle(props){
+function ContactTitle(props){
+    
     return (
         <div className="bg-secondary d-flex justify-content-center align-items-center p-0">
             <span className="title-line w-100 bg-primary"></span>

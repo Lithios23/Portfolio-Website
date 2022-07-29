@@ -1,4 +1,8 @@
 import './sass/App.scss';
+import Container from 'react-bootstrap/Container';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+import Stack from 'react-bootstrap/Stack';
 import SectionTitle from './components/section-title';
 import ContactIcon from './components/contact-icon';
 import ProjectsCarrousel from './components/projects-carrousel';
@@ -52,21 +56,26 @@ function App() {
   
   return (
     <div className="App bg-primary vh-100">
-      <section className='vh-100 bg-success'>
+      <section className='vh-100'>
         
       </section>
-      <section className='vh-100 bg-info'>
-        <ProjectsCarrousel projects={projects}/>
-      </section>
-      <section className='container-fluid vh-100 p-0 py-5'>
-        <div className='row mx-0 h-100 d-flex align-items-end'>
-          <div className='d-flex container justify-content-between w-50'>
-            {contactIcons}
-          </div>
-          <div className='px-0'>
+      <section className='vh-100'>
+        <Row className='h-100'>
+          <Col xs={{span: 4}} className='h-100'>
             <SectionTitle title='Contact me!'/>
-          </div>
-        </div>
+          </Col>
+          <Col xs={{span: 4}} className='h-100 py-5'>
+            <ProjectsCarrousel projects={projects}/>
+          </Col>
+        </Row>
+      </section>
+      <section className='vh-100 py-5 d-flex flex-column'>
+        <Container fluid className='h-75 p-0 mt-auto d-flex flex-column'>
+            <Stack direction='horizontal' gap={6} className='mb-auto d-flex justify-content-center'>
+              {contactIcons}
+            </Stack>
+            <ContactTitle/>
+        </Container>
       </section>
     </div>
   );
