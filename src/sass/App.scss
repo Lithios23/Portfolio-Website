@@ -57,8 +57,8 @@ section {
     height: 16px;
 }
 
-.projects-container {
-    overflow-y: auto;
+#projects-container {
+    overflow: scroll;
     scroll-snap-type: y mandatory;
 
     div {
