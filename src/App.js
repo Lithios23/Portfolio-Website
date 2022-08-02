@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Stack from 'react-bootstrap/Stack';
+import Image from 'react-bootstrap/Image';
 import {ContactTitle, ProjectsTitle, MainTitle} from './components/section-titles';
 import ContactIcon from './components/contact-icon';
 import ProjectsCarrousel from './components/projects-carrousel';
@@ -55,8 +56,25 @@ function App() {
   
   return (
     <div className="App bg-primary vh-100">
-      <section className='vh-100 position-relative'>
+      <section className='vh-100 position-relative d-flex'>
         <MainTitle/>
+        <Container fluid className='h-50 mt-auto mb-6'>
+          <Row className='h-100 justify-content-evenly'>
+            <Col xs='4' className='d-flex align-items-center justify-content-center flex-column'>
+              <div className='w-100'>
+                <div className='d-flex w-100 mb-4'>
+                  <Image src='./title-ends/title-end-left.png' style={{maxHeight: '44px'}}/>
+                  <h3 className='bg-secondary m-0 pt-1 text-center flex-grow-1' style={{fontSize: '33px'}}>Front-end developer</h3>
+                  <Image src='./title-ends/title-end-right.png' style={{maxHeight: '44px'}}/>
+                </div>
+                <p align='justify' className='text-white'>Computer enthusiast based in Dominican Republic. Focused on web development especially front-end.</p>
+              </div>
+            </Col>
+            <Col xs='auto' className='h-100 d-flex'>
+              <Image roundedCircle src="./profile-img.jpg" alt="Profile-img" className='mx-auto h-100 border border-5 border-secondary'/>
+            </Col>
+          </Row>
+        </Container>
         <div className='position-absolute section-title-end d-flex flex-column' style={{transform: 'rotate(180deg)', bottom: 0}}>
           <span className='bg-secondary'></span>
           <img src="./title-ends/title-end-down.png"/>

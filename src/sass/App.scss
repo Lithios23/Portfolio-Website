@@ -32,7 +32,7 @@ h2 {
 }
 
 p {
-    font-size: 25px;
+    font-size: 20px;
     font-weight: bold;
     font-family: 'Vollkorn', serif;
 }
@@ -96,7 +96,7 @@ section {
 }
 
 .projects-title {
-    transform: translate(-30%, -50%) rotate(-90deg);
+    transform: translate(-30%, calc(-50%)) rotate(-90deg);
     position: absolute;
     width: 100vh;
     top: 50%;

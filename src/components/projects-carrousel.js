@@ -44,7 +44,16 @@ export default function ProjectsCarrousel({projects}) {
 
   useEffect(() => {
     projectsContainer = proCont.current;
-    projectsContainer.addEventListener("wheel", e => e.preventDefault());
+    projectsContainer.addEventListener("wheel", e => {
+      e.preventDefault();
+
+      if (e.deltaY > 0) {
+        ScrollDown();
+      }
+      else {
+        ScrollUp();
+      }
+    });
   })
 
   const ScrollUp = () => {
