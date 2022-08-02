@@ -2,6 +2,8 @@
 $primary: #272727;
 $secondary: #E7CA63;
 
+$enable-negative-margins: true;
+
 //gap
 
 @import "../../node_modules/bootstrap/scss/functions";
@@ -78,7 +80,27 @@ section {
 }
 
 .projects-title {
-    transform: rotate(-90deg) translateY(-164px);
+    transform: translate(-30%, -50%) rotate(-90deg);
     position: absolute;
     width: 100vh;
+    top: 50%;
+}
+
+.title-divs {
+    max-height: 50px;
+}
+
+.section-title-end {
+    top: 0;
+    left: 91px;
+    width: calc(70px * 1.2);
+    
+    span {
+        width: 100%;
+        height: 4vh;
+    }
+
+    img {
+        width: 100%;
+    }
 }

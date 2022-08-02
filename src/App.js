@@ -11,7 +11,6 @@ import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 function App() {
-  
   const projects = [
     {
       title: 'Fitness Calculator',
@@ -56,20 +55,25 @@ function App() {
   
   return (
     <div className="App bg-primary vh-100">
-      <section className='vh-100'>
-        
+      <section className='vh-100 position-relative'>
+        <div className='position-absolute section-title-end d-flex flex-column' style={{transform: 'rotate(180deg)', bottom: 0}}>
+          <span className='bg-secondary'></span>
+          <img src="./title-ends/title-end-down.png"/>
+        </div>
       </section>
       <section className='vh-100'>
-        <Row className='h-100'>
-          <Col xs="5" className='h-100 d-flex align-items-center position-relative'>
-            <ProjectsTitle/>
-          </Col>
-          <Col xs="4" className='h-100 py-5'>
+        <Row className='vh-100 position-relative w-100 m-0'>
+          <ProjectsTitle/>
+          <Col xs={{span:8, offset:3}} className='px-0 h-100'>
             <ProjectsCarrousel projects={projects}/>
           </Col>
         </Row>
       </section>
-      <section className='vh-100 py-5 d-flex flex-column'>
+      <section className='vh-100 py-5 d-flex flex-column position-relative'>
+        <div className='position-absolute section-title-end d-flex flex-column'>
+          <span className='bg-secondary'></span>
+          <img src="./title-ends/title-end-down.png"/>
+        </div>
         <Container fluid className='h-75 p-0 mt-auto d-flex flex-column'>
             <Stack direction='horizontal' gap={6} className='mb-auto d-flex justify-content-center'>
               {contactIcons}
