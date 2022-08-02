@@ -31,6 +31,22 @@ h2 {
     font-size: 70px;
 }
 
+p {
+    font-size: 25px;
+    font-weight: bold;
+    font-family: 'Vollkorn', serif;
+}
+
+#header-text {
+    margin-left: 18.5% !important;
+}
+
+.main-title {
+    transform: translateX(-50%) rotate(-6deg);
+    width: 110vw;
+    left: 50%;
+}
+
 .App {
     overflow: auto;
     scroll-snap-type: y mandatory;

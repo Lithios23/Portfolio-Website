@@ -1,4 +1,27 @@
 import React from "react";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Container from "react-bootstrap/Container"
+
+function MainTitle(){
+    
+    return (
+        <Container fluid className='p-0 mt-5 main-title position-absolute'>
+            <p className='text-white m-0' id="header-text">Hey there, I'm</p>
+            <Row className="bg-secondary d-flex align-items-center p-0 m-0">
+                <Col xs='2' className="h-100 p-0">
+                    <span className="title-line w-100 bg-primary d-block"></span>
+                </Col>
+                <Col xs='auto p-0'>
+                    <h1 className="text-primary mx-3 text-nowrap my-0 lh-1 pt-2">Max Garcia</h1>
+                </Col>
+                <Col className="h-100 p-0">
+                    <span className="title-line w-100 bg-primary d-block"></span>
+                </Col>
+            </Row>
+        </Container>
+    )
+}
 
 function ContactTitle(){
     
@@ -22,4 +45,4 @@ function ProjectsTitle(){
     )
 }
 
-export {ContactTitle, ProjectsTitle};
+export {ContactTitle, ProjectsTitle, MainTitle};

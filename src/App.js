@@ -3,7 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Stack from 'react-bootstrap/Stack';
-import {ContactTitle, ProjectsTitle} from './components/section-titles';
+import {ContactTitle, ProjectsTitle, MainTitle} from './components/section-titles';
 import ContactIcon from './components/contact-icon';
 import ProjectsCarrousel from './components/projects-carrousel';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -56,6 +56,7 @@ function App() {
   return (
     <div className="App bg-primary vh-100">
       <section className='vh-100 position-relative'>
+        <MainTitle/>
         <div className='position-absolute section-title-end d-flex flex-column' style={{transform: 'rotate(180deg)', bottom: 0}}>
           <span className='bg-secondary'></span>
           <img src="./title-ends/title-end-down.png"/>
