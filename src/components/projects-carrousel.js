@@ -5,6 +5,8 @@ import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Image from 'react-bootstrap/Image'
+import Modal from 'react-bootstrap/Modal'
+import Button from 'react-bootstrap/Button'
 
 let scrollLevel = 0;
 
@@ -35,8 +37,27 @@ function ProjectsTitles(titles) {
   )
 }
 
-export default function ProjectsCarrousel({projects}) {
+function ProjectModal(show, project, close) {
+  return (
+    <Modal show={show} onHide={close}>
+      <Modal.Header closeButton>
+          <Modal.Title>{project.title}</Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+          {project.img}
+      </Modal.Body>
+      <Modal.Footer>
+          <Button onClick={close}>Close</Button>
+          <Button onClick={close}>Save Changes</Button>
+      </Modal.Footer>
+    </Modal>
+  )
+}
 
+export default function ProjectsCarrousel({projects}) {
+  
+  const [showModal, setShowModal] = useState(false);
+  const [modalProject, setModalProject] = useState(projects[0]);
   const [titles, setTitles] = useState([projects[scrollLevel].title, projects[scrollLevel+1].title]);
 
   const proCont = React.createRef();
@@ -71,11 +92,20 @@ export default function ProjectsCarrousel({projects}) {
       setTitles([projects[scrollLevel].title, projects[scrollLevel+1].title]);
     }
   }
+
+  const HandleShowModal = (project) => {
+    setShowModal(true);
+    setModalProject(project);
+  }
+  
+  const HandleCloseModal = () => {
+    setShowModal(false);
+  }
   
   const projectsCards = projects.map((project, pos) => {
     return (
       <div className='w-100 d-flex align-items-center' key={pos}>
-        <button className='w-100 bg-white bg-opacity-25 border-0 rounded-4 d-flex justify-content-center'>
+        <button className='w-100 bg-white bg-opacity-25 border-0 rounded-4 d-flex justify-content-center' onClick={() => HandleShowModal(project)}>
           <img src={project.img} className="h-100"/> 
         </button>
       </div>
@@ -84,6 +114,7 @@ export default function ProjectsCarrousel({projects}) {
   
   return (
     <Container fluid className="p-0 d-flex flex-column h-100 justify-content-center">
+      {ProjectModal(showModal, modalProject, HandleCloseModal)}
       <Row className='p-0 m-0'>
         <Col xs="6" className='p-0 ms-auto d-flex'>
           <button onClick={()=>ScrollUp()} className='border-0 bg-primary text-white mx-auto'>

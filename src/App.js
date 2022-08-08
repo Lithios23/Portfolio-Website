@@ -17,13 +17,15 @@ function App() {
       title: 'Fitness Calculator',
       img: './projects/fit-calc.png',
       description: 'Web app where you can calculate your BFP (Body fat percentage), your ideal weight (Work in progress) and your DCR (Daily calory requirement - Work in progress)',
-      technologies: ['JavaScript', 'CSS', 'SASS', 'API', 'Bootstrap', 'HTML']
+      technologies: ['JavaScript', 'CSS', 'SASS', 'API', 'Bootstrap', 'HTML'],
+      url: 'https://maxg02.github.io/Fitness-Calculator/'
     },
     {
       title: 'W3schools Homepage Clone',
       img: './projects/w3sch-clone.png',
       description: 'A frontend\'s clone of the W3school\'s homepage',
-      technologies: ['JavaScript', 'CSS', 'HTML']
+      technologies: ['JavaScript', 'CSS', 'HTML'],
+      url: 'https://maxg02.github.io/W3school-Homepage-Clone/'
     },
     {
       title: 'Python AddressBook',
