@@ -1,0 +1,23 @@
+#container {
+    overflow: scroll;
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+
+    div {
+        height: 50%;
+        scroll-snap-align: start;
+
+        button {
+            height: 90%;
+            overflow: hidden;
+        }
+    }
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}
+
+.projectTitle {
+    max-height: 50px;
+}

@@ -1,0 +1,20 @@
+#mainTitle {
+    transform: translateX(-50%) rotate(-6deg);
+    width: 110vw;
+    left: 50%;
+}
+
+#headerText {
+    margin-left: 18.5% !important;
+}
+
+.titleLine {
+    height: 16px;
+}
+
+#projectsTitle {
+    transform: translate(-30%, calc(-50%)) rotate(-90deg);
+    position: absolute;
+    width: 100vh;
+    top: 50%;
+}

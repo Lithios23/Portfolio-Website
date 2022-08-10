@@ -7,6 +7,7 @@ import Col from 'react-bootstrap/Col'
 import Image from 'react-bootstrap/Image'
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
+import Style from '../sass/project-carrousel.module.scss'
 
 let scrollLevel = 0;
 
@@ -19,7 +20,7 @@ function ProjectsTitles(titles) {
     }
 
     return (
-      <Row className='p-0 text-center d-flex title-divs m-0' key={pos}>
+      <Row className={`p-0 text-center d-flex m-0 ${Style.projectTitle}`} key={pos}>
         <Col xs='auto' className='p-0 h-100'>
           <Image src='./title-ends/title-end-left.png' className='h-100'/>
         </Col>
@@ -127,7 +128,7 @@ export default function ProjectsCarrousel({projects}) {
           {ProjectsTitles(titles)}
         </Col>
         <Col xs="6" className='p-0 h-100'>
-          <div id='projects-container' className='h-100 w-100' ref={proCont}>
+          <div id={Style.container} className='h-100 w-100' ref={proCont}>
             {projectsCards}
           </div>
         </Col>

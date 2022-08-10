@@ -77,7 +77,7 @@ function App() {
             </Col>
           </Row>
         </Container>
-        <div className='position-absolute section-title-end d-flex flex-column' style={{transform: 'rotate(180deg)', bottom: 0}}>
+        <div className='position-absolute projects-title-end d-flex flex-column' style={{transform: 'rotate(180deg)', bottom: 0}}>
           <span className='bg-secondary'></span>
           <img src="./title-ends/title-end-down.png"/>
         </div>
@@ -91,7 +91,7 @@ function App() {
         </Row>
       </section>
       <section className='vh-100 py-5 d-flex flex-column position-relative'>
-        <div className='position-absolute section-title-end d-flex flex-column' style={{top: 0}}>
+        <div className='position-absolute projects-title-end d-flex flex-column' style={{top: 0}}>
           <span className='bg-secondary'></span>
           <img src="./title-ends/title-end-down.png"/>
         </div>

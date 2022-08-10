@@ -1,6 +1,6 @@
 //variables
-$primary: #272727;
-$secondary: #E7CA63;
+
+@import './color-variables';
 
 $enable-negative-margins: true;
 
@@ -37,16 +37,6 @@ p {
     font-family: 'Vollkorn', serif;
 }
 
-#header-text {
-    margin-left: 18.5% !important;
-}
-
-.main-title {
-    transform: translateX(-50%) rotate(-6deg);
-    width: 110vw;
-    left: 50%;
-}
-
 .App {
     overflow: auto;
     scroll-snap-type: y mandatory;
@@ -58,55 +48,7 @@ section {
     overflow: hidden;
 }
 
-.contact-icon {
-    transform: rotate(45deg);
-    width: 140px;
-    height: 140px;
-    transition-duration: 0.5s;
-
-    &:hover {
-        background-color: $secondary;
-        color: $primary !important;
-        transform: rotate(45deg) translate(-10px, -10px);
-    }
-}
-
-.title-line {
-    height: 16px;
-}
-
-#projects-container {
-    overflow: scroll;
-    scroll-snap-type: y mandatory;
-    scroll-behavior: smooth;
-
-    div {
-        height: 50%;
-        scroll-snap-align: start;
-
-        button {
-            height: 90%;
-            overflow: hidden;
-        }
-    }
-
-    &::-webkit-scrollbar {
-        display: none;
-    }
-}
-
-.projects-title {
-    transform: translate(-30%, calc(-50%)) rotate(-90deg);
-    position: absolute;
-    width: 100vh;
-    top: 50%;
-}
-
-.title-divs {
-    max-height: 50px;
-}
-
-.section-title-end {
+.projects-title-end {
     left: 91px;
     width: calc(70px * 1.2);
     
