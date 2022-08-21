@@ -61,7 +61,7 @@ function ProjectModal(show, project, close) {
           </Col>
         </Row>
       </Modal.Body>
-      <Modal.Footer className='d-flex justify-content-center border-0'>
+      <Modal.Footer className='d-flex justify-content-center'>
         <Stack direction='horizontal' gap={5}>
           {url}
           <DiamondIcon icon={<FontAwesomeIcon icon={faGithub} size="2x" transform={{rotate: -45}} />} size={'50px'} url={project.repository}/>
