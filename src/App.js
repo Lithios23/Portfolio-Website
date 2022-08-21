@@ -5,7 +5,7 @@ import Row from 'react-bootstrap/Row';
 import Stack from 'react-bootstrap/Stack';
 import Image from 'react-bootstrap/Image';
 import {ContactTitle, ProjectsTitle, MainTitle} from './components/section-titles';
-import ContactIcon from './components/contact-icon';
+import DiamondIcon from './components/diamond-icon';
 import ProjectsCarrousel from './components/projects-carrousel';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
@@ -18,20 +18,23 @@ function App() {
       img: './projects/fit-calc.png',
       description: 'Web app where you can calculate your BFP (Body fat percentage), your ideal weight (Work in progress) and your DCR (Daily calory requirement - Work in progress)',
       technologies: ['JavaScript', 'CSS', 'SASS', 'API', 'Bootstrap', 'HTML'],
-      url: 'https://maxg02.github.io/Fitness-Calculator/'
+      url: 'https://maxg02.github.io/Fitness-Calculator/',
+      repository: 'https://github.com/maxg02/Fitness-Calculator'
     },
     {
       title: 'W3schools Homepage Clone',
       img: './projects/w3sch-clone.png',
       description: 'A frontend\'s clone of the W3school\'s homepage',
       technologies: ['JavaScript', 'CSS', 'HTML'],
-      url: 'https://maxg02.github.io/W3school-Homepage-Clone/'
+      url: 'https://maxg02.github.io/W3school-Homepage-Clone/',
+      repository: 'https://github.com/maxg02/W3school-Homepage-Clone'
     },
     {
       title: 'Python AddressBook',
       img: './projects/py-addrbook.png',
       description: 'An android-like Address Book made with Python',
-      technologies: ['Python', 'Tkinter', 'SQLite']
+      technologies: ['Python', 'Tkinter', 'SQLite'],
+      repository: 'https://github.com/maxg02/GUI-AddressBook-Python'
     },
   ]
 
@@ -52,7 +55,7 @@ function App() {
 
   const contactIcons = contact.map((contact, pos)=>{
     return (
-      <ContactIcon icon={<FontAwesomeIcon icon={contact.icon} size="3x" transform={{rotate: -45}}/>} key={pos} url={contact.url}/>
+      <DiamondIcon animated icon={<FontAwesomeIcon icon={contact.icon} size="3x" transform={{rotate: -45}}/>} key={pos} url={contact.url} size='140px'/>
     )
   })
   
@@ -69,7 +72,7 @@ function App() {
                   <h3 className='bg-secondary m-0 pt-1 text-center flex-grow-1' style={{fontSize: '33px'}}>Front-end developer</h3>
                   <Image src='./title-ends/title-end-right.png' style={{maxHeight: '44px'}}/>
                 </div>
-                <p align='justify' className='text-white'>Computer enthusiast based in Dominican Republic. Focused on web development especially front-end.</p>
+                <p className='text-white'>Computer enthusiast based in Dominican Republic. Focused on web development especially front-end.</p>
               </div>
             </Col>
             <Col xs='auto' className='h-100 d-flex'>

@@ -1,13 +1,15 @@
 import React, {useEffect, useState} from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChevronUp , faChevronDown } from '@fortawesome/free-solid-svg-icons'
+import { faChevronUp , faChevronDown , faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons'
+import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Image from 'react-bootstrap/Image'
 import Modal from 'react-bootstrap/Modal'
-import Button from 'react-bootstrap/Button'
 import Style from '../sass/project-carrousel.module.scss'
+import DiamondIcon from './diamond-icon'
+import Stack from 'react-bootstrap/Stack'
 
 let scrollLevel = 0;
 
@@ -39,17 +41,31 @@ function ProjectsTitles(titles) {
 }
 
 function ProjectModal(show, project, close) {
+  
+  const url = project.hasOwnProperty('url') ? <DiamondIcon icon={<FontAwesomeIcon icon={faArrowUpRightFromSquare} size="2x" transform={{rotate: -45}} />} size={'50px'} url={project.url}/> : null;
+
   return (
-    <Modal show={show} onHide={close}>
-      <Modal.Header closeButton>
-          <Modal.Title>{project.title}</Modal.Title>
+    <Modal show={show} onHide={close} dialogClassName={`${Style.modal} vh-100 my-0`} contentClassName={Style.modalContent} centered>
+      <Modal.Header closeButton closeVariant='white'>
+    	  <div>
+          <h3 className='m-0 pt-1 lh-1 text-white'>{project.title}</h3>
+        </div>
       </Modal.Header>
       <Modal.Body>
-          {project.img}
+        <Row className='m-0 w-100 flex-nowrap'>
+          <Col xs="auto d-flex justify-content-center bg-white bg-opacity-25 p-0 rounded">
+            <Image fluid src={project.img} rounded/>
+          </Col>
+          <Col xs="auto d-flex">
+            <p className='my-auto text-white'>{project.description}</p>
+          </Col>
+        </Row>
       </Modal.Body>
-      <Modal.Footer>
-          <Button onClick={close}>Close</Button>
-          <Button onClick={close}>Save Changes</Button>
+      <Modal.Footer className='d-flex justify-content-center border-0'>
+        <Stack direction='horizontal' gap={5}>
+          {url}
+          <DiamondIcon icon={<FontAwesomeIcon icon={faGithub} size="2x" transform={{rotate: -45}} />} size={'50px'} url={project.repository}/>
+        </Stack>
       </Modal.Footer>
     </Modal>
   )

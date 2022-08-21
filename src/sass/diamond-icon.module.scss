@@ -1,14 +1,15 @@
 @import './color-variables';
 
-.contactIcon {
+.diamondIcon {
     transform: rotate(45deg);
-    width: 140px;
-    height: 140px;
     transition-duration: 0.5s;
 
     &:hover {
         background-color: $secondary;
         color: $primary !important;
+    }
+    
+    &.animated:hover {
         transform: rotate(45deg) translate(-10px, -10px);
     }
 }

@@ -1,3 +1,5 @@
+@import './color-variables';
+
 #container {
     overflow: scroll;
     scroll-snap-type: y mandatory;
@@ -20,4 +22,17 @@
 
 .projectTitle {
     max-height: 50px;
+}
+
+.modal {
+    max-width: fit-content !important;
+    overflow: hidden;
+
+    img {
+        max-height: 55vh;
+    }
+
+    p{
+        width: 30vw;
+    }
 }
