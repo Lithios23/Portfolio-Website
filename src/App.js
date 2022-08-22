@@ -63,9 +63,9 @@ function App() {
     <div className="App bg-primary vh-100">
       <section id='about' className='vh-100 position-relative d-flex'>
         <MainTitle/>
-        <Container fluid className='h-50 mt-auto mb-5'>
+        <Container fluid className='mt-auto mb-5' style={{height:'60%'}}>
           <Row className='h-100 justify-content-evenly'>
-            <Col xs='5' className='d-flex align-items-center justify-content-center flex-column'>
+            <Col xs='5' className='d-flex align-items-center justify-content-center flex-column pt-5'>
               <div className='w-100'>
                 <div className='d-flex w-100 mb-4'>
                   <Image src='./title-ends/title-end-left.png' style={{maxHeight: '52px'}}/>
@@ -76,7 +76,7 @@ function App() {
               </div>
             </Col>
             <Col xs='auto' className='h-100 d-flex'>
-              <Image roundedCircle src="./profile-img.jpg" alt="Profile-img" className='mx-auto h-100 border border-5 border-secondary'/>
+              <Image src="./profile-img.png" alt="Profile-img" className='mx-auto h-100'/>
             </Col>
           </Row>
         </Container>
