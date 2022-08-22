@@ -61,16 +61,16 @@ function App() {
   
   return (
     <div className="App bg-primary vh-100">
-      <section className='vh-100 position-relative d-flex'>
+      <section id='about' className='vh-100 position-relative d-flex'>
         <MainTitle/>
-        <Container fluid className='h-50 mt-auto mb-6'>
+        <Container fluid className='h-50 mt-auto mb-5'>
           <Row className='h-100 justify-content-evenly'>
-            <Col xs='4' className='d-flex align-items-center justify-content-center flex-column'>
+            <Col xs='5' className='d-flex align-items-center justify-content-center flex-column'>
               <div className='w-100'>
                 <div className='d-flex w-100 mb-4'>
-                  <Image src='./title-ends/title-end-left.png' style={{maxHeight: '44px'}}/>
+                  <Image src='./title-ends/title-end-left.png' style={{maxHeight: '52px'}}/>
                   <h3 className='bg-secondary m-0 pt-1 text-center flex-grow-1' style={{fontSize: '33px'}}>Front-end developer</h3>
-                  <Image src='./title-ends/title-end-right.png' style={{maxHeight: '44px'}}/>
+                  <Image src='./title-ends/title-end-right.png' style={{maxHeight: '52px'}}/>
                 </div>
                 <p className='text-white'>Computer enthusiast based in Dominican Republic. Focused on web development especially front-end.</p>
               </div>
@@ -85,7 +85,7 @@ function App() {
           <img src="./title-ends/title-end-down.png"/>
         </div>
       </section>
-      <section className='vh-100'>
+      <section id='projects' className='vh-100'>
         <Row className='vh-100 position-relative w-100 m-0'>
           <ProjectsTitle/>
           <Col xs={{span:8, offset:3}} className='px-0 h-100'>
@@ -93,7 +93,7 @@ function App() {
           </Col>
         </Row>
       </section>
-      <section className='vh-100 py-5 d-flex flex-column position-relative'>
+      <section id='contact' className='vh-100 py-5 d-flex flex-column position-relative'>
         <div className='position-absolute projects-title-end d-flex flex-column' style={{top: 0}}>
           <span className='bg-secondary'></span>
           <img src="./title-ends/title-end-down.png"/>

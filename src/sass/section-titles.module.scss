@@ -1,3 +1,5 @@
+@import './color-variables';
+
 #mainTitle {
     transform: translateX(-50%) rotate(-6deg);
     width: 110vw;
@@ -6,6 +8,15 @@
 
 #headerText {
     margin-left: 18.5% !important;
+}
+
+.headerLinks {
+    text-decoration: none;
+    border-bottom: 5px solid transparent;
+
+    &:first-child, &:hover {
+        border-bottom-color: $primary;
+    }
 }
 
 .titleLine {
