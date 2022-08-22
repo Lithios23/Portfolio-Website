@@ -75,8 +75,8 @@ function App() {
                 <p className='text-white'>Computer enthusiast based in Dominican Republic. Focused on web development especially front-end.</p>
               </div>
             </Col>
-            <Col xs='auto' className='h-100 d-flex'>
-              <Image src="./profile-img.png" alt="Profile-img" className='mx-auto h-100'/>
+            <Col xs='auto' id='profile-img-frame' className='h-100 d-flex p-0'>
+              <Image src="./profile-frame.svg" alt="Profile-frame" className='h-100'/>
             </Col>
           </Row>
         </Container>
