@@ -17,13 +17,13 @@ function MainTitle(){
             <Container fluid className='p-0 bg-secondary'>
                 <Row className="d-flex align-items-center p-0 m-0">
                     <Col xs='3' className="h-100 p-0">
-                        <span className={`title-line w-100 bg-primary d-block ${Styles.titleLine}`}></span>
+                        <span className={`w-100 bg-primary d-block ${Styles.titleLine}`}></span>
                     </Col>
                     <Col xs='5 p-0 d-flex'>
                         <h1 className="text-primary mx-auto text-nowrap my-0 lh-1 pt-2">Max Garcia</h1>
                     </Col>
                     <Col className="h-100 p-0">
-                        <span className={`title-line w-100 bg-primary d-block ${Styles.titleLine}`}></span>
+                        <span className={`w-100 bg-primary d-block ${Styles.titleLine}`}></span>
                     </Col>
                 </Row>
                 <Row className='m-0 mt-n1'>
@@ -44,9 +44,9 @@ function ContactTitle(){
     
     return (
         <div className="bg-secondary d-flex justify-content-center align-items-center p-0">
-            <span className="title-line w-100 bg-primary"></span>
+            <span className={`w-100 bg-primary ${Styles.titleLine}`}></span>
             <h2 className="text-primary mx-3 text-nowrap my-0">Contact Me!</h2>
-            <span className="title-line w-100 bg-primary"></span>
+            <span className={`w-100 bg-primary ${Styles.titleLine}`}></span>
         </div>
     )
 }
@@ -55,9 +55,9 @@ function ProjectsTitle(){
     
     return (
         <div id={Styles.projectsTitle} className="bg-secondary d-flex justify-content-center align-items-center p-0">
-            <span className={`title-line w-100 bg-primary ${Styles.titleLine}`}></span>
+            <span className={`w-100 bg-primary ${Styles.titleLine}`}></span>
             <h2 className="text-primary mx-3 text-nowrap my-0">Projects</h2>
-            <span className={`title-line w-100 bg-primary ${Styles.titleLine}`}></span>
+            <span className={`w-100 bg-primary ${Styles.titleLine}`}></span>
         </div>
     )
 }
