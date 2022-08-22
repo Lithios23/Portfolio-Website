@@ -69,7 +69,7 @@ function App() {
               <div className='w-100'>
                 <div className='d-flex w-100 mb-4'>
                   <Image src='./title-ends/title-end-left.png' style={{maxHeight: '52px'}}/>
-                  <h3 className='bg-secondary m-0 pt-1 text-center flex-grow-1' style={{fontSize: '33px'}}>Front-end developer</h3>
+                  <h3 className='bg-secondary m-0 pt-1 text-center flex-grow-1' style={{fontSize: '40px'}}>Front-end developer</h3>
                   <Image src='./title-ends/title-end-right.png' style={{maxHeight: '52px'}}/>
                 </div>
                 <p className='text-white'>Computer enthusiast based in Dominican Republic. Focused on web development especially front-end.</p>
