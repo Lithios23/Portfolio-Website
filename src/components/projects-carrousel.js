@@ -90,7 +90,7 @@ export default function ProjectsCarrousel({projects}) {
   const projectsCards = projects.map((project, pos) => {
     return (
       <div className='w-100 d-flex align-items-center' key={pos}>
-        <button className='w-100 border-0 bg-white bg-opacity-25 d-flex justify-content-center'>
+        <button className='w-100 border-0 rounded bg-white bg-opacity-25 d-flex justify-content-center'>
           <img src={project.img} className="h-100"/> 
         </button>
       </div>
