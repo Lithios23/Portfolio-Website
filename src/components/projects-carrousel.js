@@ -8,6 +8,7 @@ import Col from 'react-bootstrap/Col'
 import Image from 'react-bootstrap/Image'
 import Style from '../sass/project-carrousel.module.scss'
 import Stack from 'react-bootstrap/Stack'
+import DiamondIcon from './diamond-icon'
 
 let scrollLevel = 0;
 
@@ -90,9 +91,13 @@ export default function ProjectsCarrousel({projects}) {
   const projectsCards = projects.map((project, pos) => {
     return (
       <div className='w-100 d-flex align-items-center' key={pos}>
-        <button className='w-100 border-0 rounded bg-white bg-opacity-25 d-flex justify-content-center'>
-          <img src={project.img} className="h-100"/> 
-        </button>
+        <div className='w-100 border-0 rounded d-flex justify-content-center position-relative'>
+          <img src={project.img} className="h-100"/>
+          <Stack direction='horizontal' gap={5} className='justify-content-center'>
+            <DiamondIcon animated icon={<FontAwesomeIcon icon={faGithub} size="3x" transform={{rotate: -45}}/>} key={pos} url={project.repository} size='80px'/>
+            {project.hasOwnProperty('url') ? <DiamondIcon animated icon={<FontAwesomeIcon icon={faArrowUpRightFromSquare} size="3x" transform={{rotate: -45}}/>} key={pos} url={project.url} size='80px'/> : null}
+          </Stack> 
+        </div>
       </div>
     )
   })
