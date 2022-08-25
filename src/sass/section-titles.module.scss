@@ -24,8 +24,13 @@
 }
 
 #projectsTitle {
-    transform: translate(-30%, calc(-50%)) rotate(-90deg);
-    position: absolute;
-    width: 100vh;
-    top: 50%;
+    transform: translateY(-50%) rotate(-90deg);
+    top: 150vh;
+    left: -18%;
+    height: calc(70px * 1.2);
+    z-index: 10;
+
+    div {
+        width: 100vh;
+    }
 }

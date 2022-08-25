@@ -53,21 +53,7 @@ a {
 section {
     scroll-behavior: smooth;
     scroll-snap-align: start;
-    overflow: hidden;
-}
-
-.projects-title-end {
-    left: 91px;
-    width: calc(70px * 1.2);
-    
-    span {
-        width: 100%;
-        height: 4vh;
-    }
-
-    img {
-        width: 100%;
-    }
+    overflow-x: hidden;
 }
 
 #profile-img-frame {

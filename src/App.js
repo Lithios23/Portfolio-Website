@@ -60,7 +60,7 @@ function App() {
   })
   
   return (
-    <div className="App bg-primary vh-100">
+    <div className="App bg-primary vh-100 position-relative">
       <section id='about' className='vh-100 position-relative d-flex'>
         <MainTitle/>
         <Container fluid className='mt-auto mb-5' style={{height:'60%'}}>
@@ -80,24 +80,16 @@ function App() {
             </Col>
           </Row>
         </Container>
-        <div className='position-absolute projects-title-end d-flex flex-column' style={{transform: 'rotate(180deg)', bottom: 0}}>
-          <span className='bg-secondary'></span>
-          <img src="./title-ends/title-end-down.png"/>
-        </div>
       </section>
+      <ProjectsTitle/>
       <section id='projects' className='vh-100'>
-        <Container fluid className='vh-100 position-relative m-0 p-0'>
-          <ProjectsTitle/>
+        <Container fluid className='vh-100 m-0 p-0'>
           <div className='px-0 h-100' style={{maxWidth:'69vw', marginLeft:'22%'}}>
             <ProjectsCarrousel projects={projects}/>
           </div>
         </Container>
       </section>
       <section id='contact' className='vh-100 py-5 d-flex flex-column position-relative'>
-        <div className='position-absolute projects-title-end d-flex flex-column' style={{top: 0}}>
-          <span className='bg-secondary'></span>
-          <img src="./title-ends/title-end-down.png"/>
-        </div>
         <Container fluid className='h-75 p-0 mt-auto d-flex flex-column'>
             <Stack direction='horizontal' gap={6} className='mb-auto d-flex justify-content-center'>
               {contactIcons}

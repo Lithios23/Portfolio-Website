@@ -54,10 +54,14 @@ function ContactTitle(){
 function ProjectsTitle(){
     
     return (
-        <div id={Styles.projectsTitle} className="bg-secondary d-flex justify-content-center align-items-center p-0">
-            <span className={`w-100 bg-primary ${Styles.titleLine}`}></span>
-            <h2 className="text-primary mx-3 text-nowrap my-0">Projects</h2>
-            <span className={`w-100 bg-primary ${Styles.titleLine}`}></span>
+        <div id={Styles.projectsTitle} className="d-flex position-absolute p-0">
+            <img fluid src="./title-ends/title-end-left.png"/>
+            <div className="d-flex bg-secondary">
+                <span className={`my-auto w-100 bg-primary ${Styles.titleLine}`}></span>
+                <h2 className="text-primary mx-3 text-nowrap my-0">Projects</h2>
+                <span className={`my-auto w-100 bg-primary ${Styles.titleLine}`}></span>
+            </div>
+            <img fluid src="./title-ends/title-end-right.png"/>
         </div>
     )
 }
