@@ -33,7 +33,7 @@ function ProjectsInfo(projects) {
             </Col>
           </Row>
           <div className='d-flex py-2' style={{maxHeight:'75%'}}>
-            <p className={`bg-white p-2 bg-opacity-25 my-auto text-white lh-sm m-0 ${Style.projectDescription}`}>{description}</p>
+            <p className={`bg-white p-2 bg-opacity-25 my-auto text-white lh-sm m-0 w-100 ${Style.projectDescription}`}>{description}</p>
           </div>
           <Stack direction='horizontal' gap={3} className='justify-content-center' style={{height:'10%'}}>
             {projectTechnologies}
