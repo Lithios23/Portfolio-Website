@@ -86,12 +86,12 @@ function App() {
         </div>
       </section>
       <section id='projects' className='vh-100'>
-        <Row className='vh-100 position-relative w-100 m-0'>
+        <Container fluid className='vh-100 position-relative m-0 p-0'>
           <ProjectsTitle/>
-          <Col xs={{span:8, offset:3}} className='px-0 h-100'>
+          <div className='px-0 h-100' style={{maxWidth:'69vw', marginLeft:'22%'}}>
             <ProjectsCarrousel projects={projects}/>
-          </Col>
-        </Row>
+          </div>
+        </Container>
       </section>
       <section id='contact' className='vh-100 py-5 d-flex flex-column position-relative'>
         <div className='position-absolute projects-title-end d-flex flex-column' style={{top: 0}}>
