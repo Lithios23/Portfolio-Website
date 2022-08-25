@@ -45,12 +45,12 @@ function App() {
     },
     {
       icon: faGithub,
-      url: 'https://github.com/Lithios23'
+      url: 'https://github.com/maxg02'
     },
     {
       icon: faLinkedin,
       url: 'https://www.linkedin.com/in/max-daniel-garcia-sanchez-b9658a224/'
-    }
+    },
   ]
 
   const contactIcons = contact.map((contact, pos)=>{
