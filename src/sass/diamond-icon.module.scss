@@ -4,9 +4,13 @@
     transform: rotate(45deg);
     transition-duration: 0.5s;
 
-    &:hover {
+    &:hover, &.active {
         background-color: $secondary;
         color: $primary !important;
+    }
+
+    &.active {
+        pointer-events: none;
     }
     
     &.animated:hover {
