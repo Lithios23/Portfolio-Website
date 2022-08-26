@@ -10,7 +10,7 @@ export default function ContactIcon(props) {
   
   return (
   
-    <a href={props.url} target='_blank' style={style} className={`text-white ${Styles.diamondIcon} ${props.animated ? Styles.animated : null} border border-4 boder-white d-flex align-items-center justify-content-center`}>
+    <a href={props.url} target={props.local ? '_self' : '_blank'} rel='noreferrer' style={style} className={`text-white ${props.active ? Styles.active : ''} ${Styles.diamondIcon} ${props.animated ? Styles.animated : ''} border border-4 d-flex align-items-center justify-content-center`}>
         {props.icon}
     </a>
     
