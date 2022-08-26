@@ -48,6 +48,9 @@ a {
     overflow: auto;
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
+    &::-webkit-scrollbar {
+        display: none;
+    }
 }
 
 section {
@@ -60,4 +63,11 @@ section {
     background-image: url('../../public/profile-img.jpg');
     background-size: auto 94%;
     background-position: center;
+}
+
+#nav {
+    z-index: 1000;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
 }

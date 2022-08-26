@@ -1,4 +1,5 @@
 import './sass/App.scss';
+import { useState, useEffect } from 'react';
 import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
@@ -8,10 +9,13 @@ import {ContactTitle, ProjectsTitle, MainTitle} from './components/section-title
 import DiamondIcon from './components/diamond-icon';
 import ProjectsCarrousel from './components/projects-carrousel';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope, faUser, faBriefcase } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 function App() {
+  
+  const [currentSec, setCurrentSec] = useState('about')
+  
   const projects = [
     {
       title: 'Fitness Calculator',
@@ -58,9 +62,31 @@ function App() {
       <DiamondIcon animated icon={<FontAwesomeIcon icon={contact.icon} size="3x" transform={{rotate: -45}}/>} key={pos} url={contact.url} size='140px'/>
     )
   })
+
+  useEffect(() => {
+    const appDiv = document.getElementsByClassName('App')[0];
+    appDiv.addEventListener('scroll', () => {
+      switch(appDiv.scrollTop){
+        case 0:
+          setCurrentSec('about');
+          break;
+        case 665:
+          setCurrentSec('projects');
+          break;
+        case 1330:
+          setCurrentSec('contact');
+          break;
+      }  
+    })
+  })
   
   return (
     <div className="App bg-primary vh-100 position-relative">
+      <Stack id='nav' className='position-fixed' gap={4}>
+        <DiamondIcon active={currentSec === 'about' ? true : false} local icon={<FontAwesomeIcon icon={faUser} size='1x' transform={{rotate: -45}}/>} url='#about' size='33px'/>
+        <DiamondIcon active={currentSec === 'projects' ? true : false} local icon={<FontAwesomeIcon icon={faBriefcase} size='1x' transform={{rotate: -45}}/>} url='#projects' size='33px'/>
+        <DiamondIcon active={currentSec === 'contact' ? true : false} local icon={<FontAwesomeIcon icon={faEnvelope} size='1x' transform={{rotate: -45}}/>} url='#contact' size='33px'/>
+      </Stack>
       <section id='about' className='vh-100 position-relative d-flex'>
         <MainTitle/>
         <Container fluid className='mt-auto mb-5' style={{height:'60%'}}>
