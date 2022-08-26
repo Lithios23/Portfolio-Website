@@ -10,15 +10,6 @@
     margin-left: 18.5% !important;
 }
 
-.headerLinks {
-    text-decoration: none;
-    border-bottom: 5px solid transparent;
-
-    &:first-child, &:hover {
-        border-bottom-color: $primary;
-    }
-}
-
 .titleLine {
     height: 16px;
 }
