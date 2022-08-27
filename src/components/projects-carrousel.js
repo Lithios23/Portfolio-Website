@@ -94,8 +94,8 @@ export default function ProjectsCarrousel({projects}) {
         <div className='w-100 border-0 rounded d-flex justify-content-center position-relative'>
           <img src={project.img} className="h-100"/>
           <Stack direction='horizontal' gap={5} className='justify-content-center'>
-            <DiamondIcon animated icon={<FontAwesomeIcon icon={faGithub} size="3x" transform={{rotate: -45}}/>} key={pos} url={project.repository} size='80px'/>
-            {project.hasOwnProperty('url') ? <DiamondIcon animated icon={<FontAwesomeIcon icon={faArrowUpRightFromSquare} size="3x" transform={{rotate: -45}}/>} key={pos} url={project.url} size='80px'/> : null}
+            <DiamondIcon animated icon={<FontAwesomeIcon icon={faGithub} size="3x" transform={{rotate: -45}}/>} url={project.repository} size='80px'/>
+            {project.hasOwnProperty('url') ? <DiamondIcon animated icon={<FontAwesomeIcon icon={faArrowUpRightFromSquare} size="3x" transform={{rotate: -45}}/>} url={project.url} size='80px'/> : null}
           </Stack> 
         </div>
       </div>
