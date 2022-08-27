@@ -65,15 +65,18 @@ function App() {
 
   useEffect(() => {
     const appDiv = document.getElementsByClassName('App')[0];
+    const projectsPos = document.getElementById('projects').offsetTop
+    const contactPos = document.getElementById('contact').offsetTop
+
     appDiv.addEventListener('scroll', () => {
       switch(appDiv.scrollTop){
         case 0:
           setCurrentSec('about');
           break;
-        case 665:
+        case projectsPos:
           setCurrentSec('projects');
           break;
-        case 1330:
+        case contactPos:
           setCurrentSec('contact');
           break;
       }  
