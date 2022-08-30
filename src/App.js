@@ -79,6 +79,8 @@ function App() {
         case contactPos:
           setCurrentSec('contact');
           break;
+        default:
+          break;
       }  
     })
   })
@@ -90,22 +92,20 @@ function App() {
         <DiamondIcon active={currentSec === 'projects' ? true : false} local icon={<FontAwesomeIcon icon={faBriefcase} size='1x' transform={{rotate: -45}}/>} url='#projects' size='33px'/>
         <DiamondIcon active={currentSec === 'contact' ? true : false} local icon={<FontAwesomeIcon icon={faEnvelope} size='1x' transform={{rotate: -45}}/>} url='#contact' size='33px'/>
       </Stack>
-      <section id='about' className='vh-100 position-relative d-flex'>
+      <section id='about' className='vh-100'>
         <MainTitle/>
-        <Container fluid className='mt-auto mb-5' style={{height:'60%'}}>
+        <Container fluid className='bg-info'>
           <Row className='h-100 justify-content-evenly'>
-            <Col xs='5' className='d-flex align-items-center justify-content-center flex-column pt-5'>
-              <div className='w-100'>
+            <Col md={{order:1,span:5}} className='order-2 col-12 d-flex align-items-center justify-content-center flex-column pt-5'>
                 <div className='d-flex w-100 mb-4'>
                   <Image src='./title-ends/title-end-left.png' style={{maxHeight: '52px'}}/>
                   <h3 className='bg-secondary m-0 pt-1 text-center flex-grow-1' style={{fontSize: '40px'}}>Front-end developer</h3>
                   <Image src='./title-ends/title-end-right.png' style={{maxHeight: '52px'}}/>
                 </div>
                 <p className='text-white'>Computer enthusiast based in Dominican Republic. Focused on web development especially front-end.</p>
-              </div>
             </Col>
-            <Col xs='auto' id='profile-img-frame' className='h-100 d-flex p-0'>
-              <Image src="./profile-frame.svg" alt="Profile-frame" className='h-100'/>
+            <Col md={{order:2}} id='profile-img-frame' className='order-1 col-auto d-flex p-0'>
+              <Image src="./profile-frame.svg" alt="Profile-frame"/>
             </Col>
           </Row>
         </Container>

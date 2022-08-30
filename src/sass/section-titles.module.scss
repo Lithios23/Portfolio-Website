@@ -2,16 +2,21 @@
 
 #mainTitle {
     transform: translateX(-50%) rotate(-6deg);
+    margin-left: 50%;
     width: 110vw;
-    left: 50%;
+
+    #topText {
+        font-size: 1.7vw;
+    }
 }
 
 #headerText {
+    font-size: 2vw;
     margin-left: 18.5% !important;
 }
 
 .titleLine {
-    height: 16px;
+    height: 1.3vw;
 }
 
 #projectsTitle {
