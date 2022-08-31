@@ -7,7 +7,7 @@ import Styles from '../sass/section-titles.module.scss'
 function MainTitle(){
     
     return (
-        <Container fluid id={Styles.mainTitle} className='p-0 mt-5'>
+        <Container fluid id={Styles.mainTitle} className='p-0'>
             <Row className='m-0'>
                 <Col xs={{offset:2}} className='p-0'>
                     <p className='text-white m-0 ms-3' id={Styles.topText}>Hey there, I'm</p>
