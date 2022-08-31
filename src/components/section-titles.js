@@ -8,11 +8,9 @@ function MainTitle(){
     
     return (
         <Container fluid id={Styles.mainTitle} className='p-0'>
-            <Row className='m-0'>
-                <Col xs={{offset:2}} className='p-0'>
-                    <p className='text-white m-0 ms-3' id={Styles.topText}>Hey there, I'm</p>
-                </Col>
-            </Row>
+            <div id={Styles.topText}>
+                <p className='text-white m-0'>Hey there, I'm</p>
+            </div>
             <Container fluid className='p-0 bg-secondary'>
                 <Row className="d-flex align-items-center p-0 m-0">
                     <Col xs='2' className="h-100 p-0">
