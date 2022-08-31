@@ -75,6 +75,35 @@ section {
     overflow-x: hidden;
 }
 
+#mainSectionInfo {
+    
+    & > div {
+        height: 20%;
+
+        @include media-breakpoint-up(md) {
+            height: 13%;
+        }
+    }
+
+    h3 {
+        font-size: 7vw;
+
+        @include media-breakpoint-up(sm) {
+            font-size: 5.5vw;
+        }
+        
+        @include media-breakpoint-up(md) {
+            font-size: 3vw;
+        }
+    }
+
+    p {
+        @include media-breakpoint-up(xl) {
+            font-size: 2vw;
+        }
+    }
+}
+
 #profile-img-frame {
     background-image: url('../../public/profile-img.jpg');
     background-size: auto 94%;

@@ -95,14 +95,16 @@ function App() {
       <section id='about' className='vh-100 d-flex flex-column pt-5 pb-5 overflow-hidden'>
         <MainTitle/>
         <Container fluid className='flex-grow-1 overflow-hidden'>
-          <Row className='h-100 justify-content-evenly'>
-            <Col md={{order:1,span:5}} className='order-2 col-12 d-flex align-items-center justify-content-center flex-column pt-5'>
-                <div className='d-flex w-100 mb-4'>
-                  <Image src='./title-ends/title-end-left.png' style={{maxHeight: '52px'}}/>
-                  <h3 className='bg-secondary m-0 pt-1 text-center flex-grow-1' style={{fontSize: '40px'}}>Front-end developer</h3>
-                  <Image src='./title-ends/title-end-right.png' style={{maxHeight: '52px'}}/>
+          <Row className='h-100 justify-content-evenly m-0'>
+            <Col md={{order:1,span:5}} id='mainSectionInfo' className='order-2 col-12 d-flex align-items-center justify-content-center flex-column h-50 h-md-100'>
+                <div className='d-flex w-100 mb-3 align-items-center'>
+                  <Image src='./title-ends/title-end-left.png' className='h-100'/>
+                  <div className='flex-grow-1 bg-secondary h-100 d-flex'>
+                    <h3 className='m-0 text-center m-auto'>Front-end developer</h3>
+                  </div>
+                  <Image src='./title-ends/title-end-right.png' className='h-100'/>
                 </div>
-                <p className='text-white'>Computer enthusiast based in Dominican Republic. Focused on web development especially front-end.</p>
+                <p className='text-white m-0'>Computer enthusiast based in Dominican Republic. Focused on web development especially front-end.</p>
             </Col>
             <Col md={{order:2}} id='profile-img-frame' className='order-1 col-auto p-0 h-md-100 h-50'>
               <Image src="./profile-frame.svg" alt="Profile-frame"/>
