@@ -12,12 +12,28 @@ $modal-backdrop-opacity: .7;
 @import "../../node_modules/bootstrap/scss/mixins";
 @import "../../node_modules/bootstrap/scss/variables";
 @import "../../node_modules/bootstrap/scss/maps";
+//@import "../../node_modules/bootstrap/scss"
 
 $gap6: (
     6: $spacer * 6,
 );
 
 $spacers: map-merge($spacers , $gap6);
+
+$utilities: (
+    "height": (
+      property: height,
+      class: h,
+      responsive: true,
+      values: (
+        25: 25%,
+        50: 50%,
+        75: 75%,
+        100: 100%,
+        auto: auto
+      )
+    ),
+);
 
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
@@ -65,7 +81,7 @@ section {
     background-position: center;
 
     img {
-        height: 60vh;
+        height: 100%;
     }
 }
 
