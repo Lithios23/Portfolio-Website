@@ -92,9 +92,9 @@ function App() {
         <DiamondIcon active={currentSec === 'projects' ? true : false} local icon={<FontAwesomeIcon icon={faBriefcase} size='1x' transform={{rotate: -45}}/>} url='#projects' size='33px'/>
         <DiamondIcon active={currentSec === 'contact' ? true : false} local icon={<FontAwesomeIcon icon={faEnvelope} size='1x' transform={{rotate: -45}}/>} url='#contact' size='33px'/>
       </Stack>
-      <section id='about' className='vh-100'>
+      <section id='about' className='vh-100 d-flex flex-column pt-5 pb-5 overflow-hidden'>
         <MainTitle/>
-        <Container fluid className='bg-info'>
+        <Container fluid className='flex-grow-1 overflow-hidden'>
           <Row className='h-100 justify-content-evenly'>
             <Col md={{order:1,span:5}} className='order-2 col-12 d-flex align-items-center justify-content-center flex-column pt-5'>
                 <div className='d-flex w-100 mb-4'>
@@ -104,7 +104,7 @@ function App() {
                 </div>
                 <p className='text-white'>Computer enthusiast based in Dominican Republic. Focused on web development especially front-end.</p>
             </Col>
-            <Col md={{order:2}} id='profile-img-frame' className='order-1 col-auto d-flex p-0'>
+            <Col md={{order:2}} id='profile-img-frame' className='order-1 col-auto p-0 h-md-100 h-50'>
               <Image src="./profile-frame.svg" alt="Profile-frame"/>
             </Col>
           </Row>
