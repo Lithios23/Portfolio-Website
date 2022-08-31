@@ -6,7 +6,10 @@
     width: 110vw;
 
     #topText {
-        font-size: 1.7vw;
+        p {
+            font-size: max(1.7vw, 10px);
+        }
+        margin-left: 17.9%;
     }
 }
 
