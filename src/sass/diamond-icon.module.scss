@@ -3,6 +3,7 @@
 .diamondIcon {
     transform: rotate(45deg);
     transition-duration: 0.5s;
+    aspect-ratio: 1/1;
 
     &:hover, &.active {
         background-color: $secondary;

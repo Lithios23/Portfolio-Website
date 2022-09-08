@@ -5,7 +5,6 @@ export default function ContactIcon(props) {
   
   const style = {
     width: props.size,
-    height: props.size
   }
   
   return (
