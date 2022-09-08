@@ -66,21 +66,6 @@ a {
     font-family: 'Josefin Sans', sans-serif !important;
 }
 
-.App {
-    overflow: auto;
-    scroll-snap-type: y mandatory;
-    scroll-behavior: smooth;
-    &::-webkit-scrollbar {
-        display: none;
-    }
-}
-
-section {
-    scroll-behavior: smooth;
-    scroll-snap-align: start;
-    overflow-x: hidden;
-}
-
 #mainSectionInfo {
     
     & > div {

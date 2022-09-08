@@ -86,7 +86,7 @@ function App() {
   })
   
   return (
-    <div className="App bg-primary vh-100 position-relative">
+    <div className="App bg-primary position-relative">
       <Stack id='nav' className='position-fixed d-none d-lg-flex' gap={4}>
         <DiamondIcon active={currentSec === 'about' ? true : false} local icon={<FontAwesomeIcon icon={faUser} size='1x' transform={{rotate: -45}}/>} url='#about' size='33px'/>
         <DiamondIcon active={currentSec === 'projects' ? true : false} local icon={<FontAwesomeIcon icon={faBriefcase} size='1x' transform={{rotate: -45}}/>} url='#projects' size='33px'/>
