@@ -21,7 +21,7 @@ function App() {
       title: 'Fitness Calculator',
       img: './projects/fit-calc.png',
       description: 'Web app where you can calculate your BFP (Body fat percentage), your ideal weight (Work in progress) and your DCR (Daily calory requirement - Work in progress)',
-      technologies: ['JavaScript', 'CSS', 'SASS', 'API', 'Bootstrap', 'HTML'],
+      technologies: ['SASS', 'Fitness Calculator API', 'Bootstrap'],
       url: 'https://maxg02.github.io/Fitness-Calculator/',
       repository: 'https://github.com/maxg02/Fitness-Calculator'
     },
@@ -112,13 +112,13 @@ function App() {
           </Row>
         </Container>
       </section>
-      <ProjectsTitle/>
-      <section id='projects' className='vh-100'>
-        <Container fluid className='vh-100 m-0 p-0'>
-          <div className='px-0 h-100' style={{maxWidth:'69vw', marginLeft:'22%'}}>
+      <section id='projects' className='vh-100 d-flex flex-column py-md-5 py-3'>
+        <ProjectsTitle/>
+        <Row className='m-0 p-0 flex-grow-1 overflow-hidden'>
+          <Col md={{span:8}} className='m-0 col-12 px-0 h-100' id='projCarrouselContainer'>
             <ProjectsCarrousel projects={projects}/>
-          </div>
-        </Container>
+          </Col>
+        </Row>
       </section>
       <section id='contact' className='vh-100 py-5 d-flex flex-column position-relative'>
         <Container fluid className='h-75 p-0 mt-auto d-flex flex-column'>

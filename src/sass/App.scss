@@ -29,9 +29,15 @@ $utilities: (
         25: 25%,
         50: 50%,
         75: 75%,
+        90: 90%,
         100: 100%,
         auto: auto
       )
+    ),
+    "position": (
+      property: position,
+      responsive: true,
+      values: static relative absolute fixed sticky
     ),
 );
 
@@ -46,7 +52,7 @@ h1 {
 }
 
 h2 {
-    font-size: 70px;
+    font-size: 5vw;
 }
 
 p {
@@ -119,4 +125,10 @@ section {
     right: 30px;
     top: 50%;
     transform: translateY(-50%);
+}
+
+#projCarrouselContainer {
+    @include media-breakpoint-up(md) {
+        margin-left: 23% !important;
+    }
 }

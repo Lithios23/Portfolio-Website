@@ -1,33 +1,27 @@
 @import './color-variables';
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/mixins";
+@import "../../node_modules/bootstrap/scss/variables";
 
 #container {
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
     scroll-behavior: smooth;
 
-    div {
-        height: 50%;
+    & > div {
         scroll-snap-align: start;
 
         div {
-            height: 90%;
-            overflow: hidden;
             
             & > div {
-                width: 100%;
-                height: 100%;
-                opacity: 0;
-                position: absolute;
-                left: 0;
                 transition: linear 0.2s;
             }
 
             &:hover > div{
-                opacity: 1;
+                opacity: 1 !important;
             }
 
             img {
-                opacity: 1;
                 transition: linear 0.2s;
             }
             
@@ -42,30 +36,51 @@
     }
 }
 
-.projectInfo {
+.projectInfoContainer {
+    
+    padding: 2em 0 2em 0;
 
-    & > div {
-        height: 90%;
+    @include media-breakpoint-down(sm){
+        padding: 15px 0 15px 0;
     }
 
-    .projectDescription {
-        font-size: 20px;
-    }
+    .projectInfo {
 
-    .projectTechnologies {
-        color: $secondary;
-    }
-}
+        @include media-breakpoint-down(sm){
+            &:nth-child(2) {
+                display: none !important;
+            }
 
-.modal {
-    max-width: fit-content !important;
-    overflow: hidden;
+            .projectDescription{
+                font-size: 3.7vw !important;
+            }
 
-    img {
-        max-height: 55vh;
-    }
+            .projectTitle {
+                font-size: max(17px,4vw) !important;
+            }
+            
+        }
 
-    p{
-        width: 30vw;
+        & > div {
+            height: 90%;
+        }
+
+        .projectTitle {
+            font-size: max(2.15vw,17px);
+        }
+    
+        .projectDescription {
+            font-size: max(1.45vw, 12px);
+        }
+    
+        .projectTechnologies {
+            
+            &:not(:last-child){
+                margin-right: 15px;
+            }
+            
+            color: $secondary;
+            font-size: max(1.1vw, 10px);
+        }
     }
 }

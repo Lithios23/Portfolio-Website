@@ -1,5 +1,9 @@
 @import './color-variables';
 
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/mixins";
+@import "../../node_modules/bootstrap/scss/variables";
+
 #mainTitle {
     transform: translateX(-50%) rotate(-6deg);
     margin-left: 50%;
@@ -23,13 +27,21 @@
 }
 
 #projectsTitle {
-    transform: translate(-50%, -50%) rotate(-90deg);
-    top: 150vh;
-    left: 140px;
-    height: calc(70px * 1.2);
+    
+    @include media-breakpoint-up(md) {
+        transform: translate(-50%, -50%) rotate(-90deg);
+        top: 150vh;
+        left: 10vw;
+
+        div {
+            width: 100vh !important;
+        }
+    }
+
+    height: 6.3vw;
     z-index: 10;
 
     div {
-        width: 100vh;
+        width: 100vw;
     }
 }
