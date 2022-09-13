@@ -7,23 +7,18 @@
 #mainTitle {
     transform: translateX(-50%) rotate(-6deg);
     margin-left: 50%;
-    width: 110vw;
+    width: 110%;
 
     #topText {
         p {
-            font-size: max(1.7vw, 10px);
+            font-size: clamp(8px, 1.7vw, 25px);
         }
         margin-left: 17.9%;
     }
 }
 
-#headerText {
-    font-size: 2vw;
-    margin-left: 18.5% !important;
-}
-
 .titleLine {
-    height: 1.3vw;
+    height: min(1.3vw, 20px);
 }
 
 #projectsTitle {

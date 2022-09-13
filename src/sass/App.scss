@@ -41,6 +41,14 @@ $utilities: (
     ),
 );
 
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1400px
+);
+
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
 
 h1, h2, h3, h4, h5, h6 {
@@ -48,7 +56,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font-size: 8vw;
+    font-size: clamp(27px ,8vw, 100px);
 }
 
 h2 {
@@ -57,7 +65,6 @@ h2 {
 
 p {
     font-size: 22px;
-    font-weight: bold;
     font-family: 'Vollkorn', serif;
     text-align: justify;
 }
@@ -67,30 +74,28 @@ a {
 }
 
 #mainSectionInfo {
-    
-    & > div {
-        height: 20%;
 
-        @include media-breakpoint-up(md) {
-            height: 13%;
-        }
-    }
-
-    h3 {
-        font-size: 7vw;
-
-        @include media-breakpoint-up(sm) {
-            font-size: 5.5vw;
-        }
+    #title{
         
-        @include media-breakpoint-up(md) {
-            font-size: 3vw;
+        padding: 0px 6% 0 6%;
+
+        background-image: url('../../public/title-ends/titlebg.svg');
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        
+        white-space: nowrap;
+        font-size: clamp(33px, 4vw, 63px);
+        
+        @include media-breakpoint-down(md){
+            font-size: 6.5vw;
         }
     }
 
     p {
-        @include media-breakpoint-up(xl) {
-            font-size: 2vw;
+        font-size: clamp(19.5px, 2.23vw, 33px);
+        @include media-breakpoint-down(md){
+            font-size: 4.5vw;
         }
     }
 }
@@ -101,7 +106,12 @@ a {
     background-position: center;
 
     img {
-        height: 100%;
+        height: clamp(285px, 32vw, 443px);
+
+        @include media-breakpoint-down(md){
+            height: auto;
+            width: 60vw;
+        }
     }
 }
 

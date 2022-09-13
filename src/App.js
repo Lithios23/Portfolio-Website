@@ -86,48 +86,42 @@ function App() {
   })
   
   return (
-    <div className="App bg-primary position-relative">
+    <div className="App bg-primary">
       <Stack id='nav' className='position-fixed d-none d-lg-flex' gap={4}>
         <DiamondIcon active={currentSec === 'about' ? true : false} local icon={<FontAwesomeIcon icon={faUser} size='1x' transform={{rotate: -45}}/>} url='#about' size='33px'/>
         <DiamondIcon active={currentSec === 'projects' ? true : false} local icon={<FontAwesomeIcon icon={faBriefcase} size='1x' transform={{rotate: -45}}/>} url='#projects' size='33px'/>
         <DiamondIcon active={currentSec === 'contact' ? true : false} local icon={<FontAwesomeIcon icon={faEnvelope} size='1x' transform={{rotate: -45}}/>} url='#contact' size='33px'/>
       </Stack>
-      <section id='about' className='vh-100 d-flex flex-column pt-5 pb-5 overflow-hidden'>
-        <MainTitle/>
-        <Container fluid className='flex-grow-1 overflow-hidden'>
-          <Row className='h-100 justify-content-evenly m-0'>
-            <Col md={{order:1,span:5}} id='mainSectionInfo' className='order-2 col-12 d-flex align-items-center justify-content-center flex-column h-50 h-md-100'>
-                <div className='d-flex w-100 mb-3 align-items-center'>
-                  <Image src='./title-ends/title-end-left.png' className='h-100'/>
-                  <div className='flex-grow-1 bg-secondary h-100 d-flex'>
-                    <h3 className='m-0 text-center m-auto'>Front-end developer</h3>
-                  </div>
-                  <Image src='./title-ends/title-end-right.png' className='h-100'/>
-                </div>
-                <p className='text-white m-0'>Computer enthusiast based in Dominican Republic. Focused on web development especially front-end.</p>
+      <Container fluid='xxl' className='position-relative px-3 px-lg-6'>
+        <section id='about' className='min-vh-100 d-flex flex-column py-5 overflow-hidden'>
+          <MainTitle/>
+          <Row className='flex-grow-1 justify-content-center justify-content-md-between m-0 my-auto align-content-center w-100'>
+            <Col md={{order:1,span:7}} id='mainSectionInfo' className='col-12 order-2 d-flex align-items-center justify-content-center flex-column p-0'>
+              <h3 id='title' className='m-0 mb-2 text-center w-100'>Front-end developer</h3>
+              <p className='text-white m-0'>Computer enthusiast based in Dominican Republic. Focused on web development especially front-end.</p>
             </Col>
-            <Col md={{order:2}} id='profile-img-frame' className='order-1 col-auto p-0 h-md-100 h-50'>
+            <Col md={{order:2}} id='profile-img-frame' className='mb-3 mb-md-0 col-auto order-1 col-auto p-0'>
               <Image src="./profile-frame.svg" alt="Profile-frame"/>
             </Col>
           </Row>
-        </Container>
-      </section>
-      <section id='projects' className='vh-100 d-flex flex-column py-md-5 py-3'>
-        <ProjectsTitle/>
-        <Row className='m-0 p-0 flex-grow-1 overflow-hidden'>
-          <Col md={{span:8}} className='m-0 col-12 px-0 h-100' id='projCarrouselContainer'>
-            <ProjectsCarrousel projects={projects}/>
-          </Col>
-        </Row>
-      </section>
-      <section id='contact' className='vh-100 py-5 d-flex flex-column position-relative'>
-        <Container fluid className='h-75 p-0 mt-auto d-flex flex-column'>
-            <Stack direction='horizontal' gap={6} className='mb-auto d-flex justify-content-center'>
-              {contactIcons}
-            </Stack>
-            <ContactTitle/>
-        </Container>
-      </section>
+        </section>
+        <section id='projects' className='vh-100 d-flex flex-column py-md-5 py-3'>
+          <ProjectsTitle/>
+          <Row className='m-0 p-0 flex-grow-1 overflow-hidden'>
+            <Col md={{span:8}} className='m-0 col-12 px-0 h-100' id='projCarrouselContainer'>
+              <ProjectsCarrousel projects={projects}/>
+            </Col>
+          </Row>
+        </section>
+        <section id='contact' className='vh-100 py-5 d-flex flex-column position-relative'>
+          <Container fluid className='h-75 p-0 mt-auto d-flex flex-column'>
+              <Stack direction='horizontal' gap={6} className='mb-auto d-flex justify-content-center'>
+                {contactIcons}
+              </Stack>
+              <ContactTitle/>
+          </Container>
+        </section>
+      </Container>
     </div>
   );
 }
