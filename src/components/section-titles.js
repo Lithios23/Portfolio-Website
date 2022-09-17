@@ -7,13 +7,13 @@ import Styles from '../sass/section-titles.module.scss'
 function MainTitle(){
     
     return (
-        <Container fluid id={Styles.mainTitle} className='p-0'>
-            <div id={Styles.topText}>
-                <p className='text-white m-0'>Hey there, I'm</p>
+        <Container fluid id={Styles.mainTitle} className='p-0 mt-5'>
+            <div id={Styles.topText} className='d-flex'>
+                <p className='text-white mb-0 mx-auto'>Hey there, I'm</p>
             </div>
             <Container fluid className='p-0 bg-secondary'>
                 <Row className="d-flex align-items-center p-0 m-0">
-                    <Col xs='2' className="h-100 p-0">
+                    <Col className="h-100 p-0">
                         <span className={`w-100 bg-primary d-block ${Styles.titleLine}`}></span>
                     </Col>
                     <Col xs='auto p-0 d-flex px-2'>
@@ -31,7 +31,7 @@ function MainTitle(){
 function ContactTitle(){
     
     return (
-        <div className="bg-secondary d-flex justify-content-center align-items-center p-0">
+        <div className="bg-secondary mb-5 d-flex justify-content-center align-items-center p-0">
             <span className={`w-100 bg-primary ${Styles.titleLine}`}></span>
             <h2 className="text-primary mx-3 text-nowrap my-0">Contact Me!</h2>
             <span className={`w-100 bg-primary ${Styles.titleLine}`}></span>
