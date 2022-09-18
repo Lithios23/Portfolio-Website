@@ -3,36 +3,53 @@
 @import "../../node_modules/bootstrap/scss/mixins";
 @import "../../node_modules/bootstrap/scss/variables";
 
-#container {
-    overflow-y: scroll;
-    scroll-snap-type: y mandatory;
-    scroll-behavior: smooth;
+$cardsTranslate: 200px;
+$numberOfCards: 3;
+$degrees: calc(360/$numberOfCards);
 
-    & > div {
-        scroll-snap-align: start;
+#projectsCardsContainer {
+    
+    transform-style: preserve-3d;
+    transition: 2s;
+    transform: rotateX(120deg);
 
-        div {
-            
-            & > div {
-                transition: linear 0.2s;
-            }
+    .projectCard, .cardBack {        
 
-            &:hover > div{
-                opacity: 1 !important;
-            }
+        position: absolute;
+        aspect-ratio: 1325 / 664;
+        width: 100%;
 
-            img {
-                transition: linear 0.2s;
-            }
-            
-            &:hover > img{
-                opacity: 0.1;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        margin:auto;
+
+        background-color: black;
+
+        @for $i from 1 through $numberOfCards {
+            &:nth-of-type(#{$i}) {
+                transform: rotateX(#{$degrees*($i - 1)}deg) translateZ($cardsTranslate);
             }
         }
     }
 
+    .projectCard {
+        z-index: 4;
+        backface-visibility: hidden;
+    }
+
     &::-webkit-scrollbar {
         display: none;
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotateX(360deg);
+    }
+    to {
+        transform: rotateX(0deg);
     }
 }
 
