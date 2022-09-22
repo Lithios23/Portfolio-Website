@@ -7,7 +7,7 @@ import Stack from 'react-bootstrap/Stack';
 import Image from 'react-bootstrap/Image';
 import {ContactTitle, ProjectsTitle, MainTitle} from './components/section-titles';
 import DiamondIcon from './components/diamond-icon';
-import ProjectsCarrousel from './components/projects-carrousel';
+import ProjectsCarousel from './components/projects-carousel';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faUser, faBriefcase } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
@@ -109,7 +109,7 @@ function App() {
       <Container fluid='xxl' className='position-relative px-3 px-lg-6'>
         <section id='projects' className='min-vh-100 d-flex flex-column'>
           {/*<ProjectsTitle/>*/}
-          <ProjectsCarrousel projects={projects}/>
+          <ProjectsCarousel projects={projects}/>
         </section>
       </Container>
       <section id='contact' className='min-vh-100 d-flex flex-column position-relative'>

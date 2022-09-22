@@ -6,7 +6,7 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-import Style from '../sass/project-carrousel.module.scss'
+import Style from '../sass/project-carousel.module.scss'
 import Stack from 'react-bootstrap/Stack'
 import DiamondIcon from './diamond-icon'
 
