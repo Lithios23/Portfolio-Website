@@ -1,20 +1,23 @@
-import React, {useEffect, /*useState*/} from 'react'
+import React, {useEffect, useState, useRef} from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { /*faChevronUp , faChevronDown ,*/ faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons'
+import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons'
+import { faSquareCaretUp, faSquareCaretDown} from '@fortawesome/free-regular-svg-icons'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
-//import Image from 'react-bootstrap/Image'
 import Style from '../sass/project-carrousel.module.scss'
 import Stack from 'react-bootstrap/Stack'
 import DiamondIcon from './diamond-icon'
 
 export default function ProjectsCarrousel({projects}) {
-  
-  //const [visibleProjects, setVisibleProjects] = useState([projects[scrollLevel], projects[scrollLevel+1]]);
 
-  const proCont = React.createRef();
+  const [carouselPosition, setCarouselPosition] = useState(0);
+  const [visibleProject, setVisibleProject] = useState(0);
+  
+  const degreesAmount = 360/projects.length;
+  
+  const proCont = useRef();
   let projectsContainer;
 
   useEffect(() => {
@@ -32,38 +35,58 @@ export default function ProjectsCarrousel({projects}) {
   })
 
   const ScrollUp = () => {
+    setCarouselPosition(carouselPosition+1);
+    visibleProject > 0 ? setVisibleProject(visibleProject-1) : setVisibleProject(projects.length-1);
   }
   
   const ScrollDown = () => {
+    setCarouselPosition(carouselPosition-1);
+    visibleProject < projects.length-1 ? setVisibleProject(visibleProject+1) : setVisibleProject(0);
   }
   
   const projectsCards = projects.map((project, pos) => {
     return (
       <>
       <div className={`${Style.projectCard}`} key={pos}>
-        <img className='w-100 h-100' src={project.img}/>
-        <Stack direction='horizontal' gap={5} className='d-none justify-content-center w-100 h-100 opacity-0 position-absolute start-0'>
+        <img className='w-100 h-100' src={project.img} alt='Project'/>
+        <Stack direction='horizontal' gap={5} className='justify-content-center w-100 h-100 opacity-0 position-absolute top-0'>
           <DiamondIcon animated icon={<FontAwesomeIcon icon={faGithub} size="3x" transform={{rotate: -45}}/>} url={project.repository} size='80px'/>
           {project.hasOwnProperty('url') ? <DiamondIcon animated icon={<FontAwesomeIcon icon={faArrowUpRightFromSquare} size="3x" transform={{rotate: -45}}/>} url={project.url} size='80px'/> : null}
         </Stack> 
       </div>
-      <span className={Style.cardBack}></span>
+      <span className={`w-100 ${Style.cardBack}`}></span>
       </>
+    )
+  })
+
+  const projectTechs = projects[visibleProject].technologies.map((technology, pos) => {
+    return (
+      <span key={pos}>{technology}</span>
     )
   })
   
   return (
-    <Container fluid className="py-3 py-md-0 h-100">
-      <Row className='w-100 m-0 h-100 flex-column'>
-        {/*<Col sm={{span:6,order:1}} className={`col-12 px-0 h-sm-100 h-50 order-2 ${Style.projectInfoContainer}`}>
-          {ProjectsInfo(visibleProjects)}
-        </Col>*/}
-        <Col sm={{span:6,order:2}} className='col-12 p-0 h-sm-100 h-50 order-1 d-flex flex-column'>
-          <div className=' h-100 position-relative' id={Style.projectsCardsContainer} ref={proCont}>
+    <Row className='m-0 my-auto w-100 align-items-center p-0' style={{columnGap:'4%'}}>
+      <Col className='col-auto pe-0 h-100 d-flex flex-column' style={{paddingLeft:'28px'}}>
+        <div id={Style.carousel} className='d-flex flex-column'>
+          <button className='border-0 bg-transparent text-white' onClick={() => ScrollUp()}>
+            <FontAwesomeIcon icon={faSquareCaretUp} size='2x'/>
+          </button>
+          <div className='h-100 w-100 position-relative' id={Style.projectsCardsContainer} ref={proCont} style={{transform: `rotatex(${degreesAmount*carouselPosition}deg)`}}>
             {projectsCards}
           </div>
-        </Col>
-      </Row> 
-    </Container>
+          <button className='border-0 bg-transparent text-white' onClick={() => ScrollDown()}>
+            <FontAwesomeIcon icon={faSquareCaretDown} size='2x'/>
+          </button>
+        </div>
+      </Col>
+      <Col className='w-100 p-0' id={Style.projectInfoContainer}>
+        <h3 className='title w-100 text-center'>{projects[visibleProject].title}</h3>
+        <p className='p-3'>{projects[visibleProject].description}</p>
+        <Stack id={Style.technologies} direction='horizontal' gap={4} className='d-flex justify-content-center'>
+          {projectTechs}
+        </Stack>
+      </Col>
+    </Row> 
   )
 }

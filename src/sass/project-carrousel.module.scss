@@ -1,103 +1,86 @@
+@use 'sass:math';
 @import './color-variables';
 @import "../../node_modules/bootstrap/scss/functions";
 @import "../../node_modules/bootstrap/scss/mixins";
 @import "../../node_modules/bootstrap/scss/variables";
 
-$cardsTranslate: 200px;
+$cardsTranslate: min(9vw,110px);
 $numberOfCards: 3;
 $degrees: calc(360/$numberOfCards);
-
-#projectsCardsContainer {
+ 
+#carousel {
     
-    transform-style: preserve-3d;
     transition: 2s;
-    transform: rotateX(120deg);
+    width: min(40vw,475px);
+    transform-style: preserve-3d;
+    perspective: 1000px;
 
-    .projectCard, .cardBack {        
+    #projectsCardsContainer {
+    
+        transform-style: preserve-3d;
+        transition: 2s;
+        aspect-ratio: 1325 / 940;
 
-        position: absolute;
-        aspect-ratio: 1325 / 664;
-        width: 100%;
-
-        top: 0;
-        bottom: 0;
-        right: 0;
-        left: 0;
-        margin:auto;
-
-        background-color: black;
-
-        @for $i from 1 through $numberOfCards {
-            &:nth-of-type(#{$i}) {
-                transform: rotateX(#{$degrees*($i - 1)}deg) translateZ($cardsTranslate);
+        .projectCard, .cardBack {        
+    
+            position: absolute;
+            aspect-ratio: 1325 / 664;
+            
+            z-index: 3;
+    
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            margin:auto;
+    
+            background-color: rgba(0, 0, 0, 0.233);
+    
+            @for $i from 1 through $numberOfCards {
+                &:nth-of-type(#{$i}) {
+                    transform: rotateX(#{$degrees*($i - 1)}deg) translateZ($cardsTranslate);
+                }
+            }
+    
+            img {
+                transform: rotate(0.0000000000001deg);
             }
         }
-    }
+    
+        .projectCard {
+            z-index: 4;
+            backface-visibility: hidden;
+            background-color: $gray-800;
 
-    .projectCard {
-        z-index: 4;
-        backface-visibility: hidden;
-    }
-
-    &::-webkit-scrollbar {
-        display: none;
+            &:hover{
+                div {
+                    opacity: 1 !important;
+                    background-color: rgba(0, 0, 0, 0.747);
+                    transition: .2s ease-in;
+                }
+            }
+        }
+    
+        &::-webkit-scrollbar {
+            display: none;
+        }
     }
 }
 
-@keyframes spin {
-    from {
-        transform: rotateX(360deg);
+#projectInfoContainer {   
+    h3 {
+        font-size: min(2.5vw,40px);
     }
-    to {
-        transform: rotateX(0deg);
+    
+    p {
+        background-color: $gray-800;
+        color: white;
+        font-size: min(1.5vw,22.5px);
     }
-}
-
-.projectInfoContainer {
     
-    padding: 2em 0 2em 0;
-
-    @include media-breakpoint-down(sm){
-        padding: 15px 0 15px 0;
-    }
-
-    .projectInfo {
-
-        @include media-breakpoint-down(sm){
-            &:nth-child(2) {
-                display: none !important;
-            }
-
-            .projectDescription{
-                font-size: 3.7vw !important;
-            }
-
-            .projectTitle {
-                font-size: max(17px,4vw) !important;
-            }
-            
-        }
-
-        & > div {
-            height: 90%;
-        }
-
-        .projectTitle {
-            font-size: max(2.15vw,17px);
-        }
-    
-        .projectDescription {
-            font-size: max(1.45vw, 12px);
-        }
-    
-        .projectTechnologies {
-            
-            &:not(:last-child){
-                margin-right: 15px;
-            }
-            
+    #technologies {
+        span {
             color: $secondary;
-            font-size: max(1.1vw, 10px);
         }
     }
 }
