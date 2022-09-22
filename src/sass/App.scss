@@ -3,8 +3,6 @@
 @import './color-variables';
 
 $enable-negative-margins: true;
-$modal-content-bg: $primary;
-$modal-backdrop-opacity: .7;
 
 //gap
 
@@ -15,7 +13,7 @@ $modal-backdrop-opacity: .7;
 //@import "../../node_modules/bootstrap/scss"
 
 $gap6: (
-    6: $spacer * 6,
+    6: $spacer * 4.8,
 );
 
 $spacers: map-merge($spacers , $gap6);
@@ -73,17 +71,19 @@ a {
     font-family: 'Josefin Sans', sans-serif !important;
 }
 
+.title{
+        
+    padding: 0px 6% 0 6%;
+
+    background-image: url('../../public/title-ends/titlebg.svg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
 #mainSectionInfo {
 
-    #title{
-        
-        padding: 0px 6% 0 6%;
-
-        background-image: url('../../public/title-ends/titlebg.svg');
-        background-size: 100%;
-        background-repeat: no-repeat;
-        background-position: center;
-        
+    h2 {
         white-space: nowrap;
         font-size: clamp(33px, 4vw, 63px);
         
@@ -117,7 +117,7 @@ a {
 
 #nav {
     z-index: 1000;
-    right: 30px;
+    right: 22.5px;
     top: 50%;
     transform: translateY(-50%);
 }

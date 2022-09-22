@@ -97,7 +97,7 @@ function App() {
         <Container fluid='xxl' className='d-flex flex-grow-1 px-3 px-lg-6'>
           <Row className='justify-content-center justify-content-md-between m-0 my-auto align-content-center w-100'>
             <Col md={{order:1,span:7}} id='mainSectionInfo' className='col-12 order-2 d-flex align-items-center justify-content-center flex-column p-0'>
-              <h3 id='title' className='m-0 mb-2 text-center w-100'>Front-end developer</h3>
+              <h2 className='title m-0 mb-2 text-center w-100'>Front-end developer</h2>
               <p className='text-white m-0'>Computer enthusiast based in Dominican Republic. Focused on web development especially front-end.</p>
             </Col>
             <Col md={{order:2}} id='profile-img-frame' className='mb-3 mb-md-0 col-auto order-1 col-auto p-0'>
@@ -107,13 +107,9 @@ function App() {
         </Container>
       </section>      
       <Container fluid='xxl' className='position-relative px-3 px-lg-6'>
-        <section id='projects' className='vh-100 d-flex flex-column py-md-5 py-3'>
+        <section id='projects' className='min-vh-100 d-flex flex-column'>
           {/*<ProjectsTitle/>*/}
-          <Row className='m-0 p-0 flex-grow-1 overflow-hidden'>
-            <Col md={{span:8}} className='m-0 col-12 px-0 h-100' id='projCarrouselContainer'>
-              <ProjectsCarrousel projects={projects}/>
-            </Col>
-          </Row>
+          <ProjectsCarrousel projects={projects}/>
         </section>
       </Container>
       <section id='contact' className='min-vh-100 d-flex flex-column position-relative'>
