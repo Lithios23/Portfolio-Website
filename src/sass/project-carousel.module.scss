@@ -4,7 +4,7 @@
 @import "../../node_modules/bootstrap/scss/mixins";
 @import "../../node_modules/bootstrap/scss/variables";
 
-$cardsTranslate: clamp(47px,9vw,110px);
+$cardsTranslate: clamp(65px,9vw,110px);
 $numberOfCards: 3;
 $degrees: calc(360/$numberOfCards);
 
@@ -17,7 +17,7 @@ $degrees: calc(360/$numberOfCards);
     #carousel {
     
         transition: transform 2s;
-        width: clamp(200px,40vw,475px);
+        width: clamp(280px,40vw,475px);
         transform-style: preserve-3d;
         perspective: 1000px;
     
@@ -46,10 +46,6 @@ $degrees: calc(360/$numberOfCards);
                     &:nth-of-type(#{$i}) {
                         transform: rotateX(#{$degrees*($i - 1)}deg) translateZ($cardsTranslate);
                     }
-                }
-        
-                img {
-                    transform: rotate(0.0000000000001deg);
                 }
             }
         
