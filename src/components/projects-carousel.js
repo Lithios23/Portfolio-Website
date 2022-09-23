@@ -67,7 +67,7 @@ export default function ProjectsCarrousel({projects}) {
   
   return (
     <Row className='m-0 my-auto w-100 align-items-center p-0' style={{columnGap:'4%'}}>
-      <Col className='col-auto pe-0 h-100 d-flex flex-column' style={{paddingLeft:'28px'}}>
+      <Col md='auto' id={Style.carouselContainer} className='col-12 px-0 h-100 d-flex flex-column align-items-center mb-md-0 mb-3'>
         <div id={Style.carousel} className='d-flex flex-column'>
           <button className='border-0 bg-transparent text-white' onClick={() => ScrollUp()}>
             <FontAwesomeIcon icon={faSquareCaretUp} size='2x'/>
@@ -80,7 +80,7 @@ export default function ProjectsCarrousel({projects}) {
           </button>
         </div>
       </Col>
-      <Col className='w-100 p-0' id={Style.projectInfoContainer}>
+      <Col className='p-0' id={Style.projectInfoContainer}>
         <h3 className='title w-100 text-center'>{projects[visibleProject].title}</h3>
         <p className='p-3'>{projects[visibleProject].description}</p>
         <Stack id={Style.technologies} direction='horizontal' gap={4} className='d-flex justify-content-center'>
