@@ -108,7 +108,7 @@ function App() {
         </section>
       </Container>
       <section id='contact' className='min-vh-100 d-flex flex-column position-relative'>
-        <Container fluid='xxl' className='flex-grow-1 p-0 mt-auto d-flex flex-column'>
+        <Container fluid='xxl' className='flex-grow-1 p-0 mt-auto d-flex flex-column px-3 px-lg-6'>
           <Stack direction='horizontal' gap={6} className='my-auto d-flex justify-content-center'>
             {contactIcons}
           </Stack>
