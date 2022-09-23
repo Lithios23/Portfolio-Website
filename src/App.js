@@ -67,7 +67,6 @@ function App() {
     const projectsPos = document.getElementById('projects').offsetTop;
 
     window.addEventListener('scroll', () => {
-      console.log(window.scrollY)
       if (window.scrollY < projectsPos/2) {
         setCurrentSec('about');
       }
@@ -89,7 +88,7 @@ function App() {
       </Stack>
       <section id='about' className='min-vh-100 d-flex flex-column overflow-hidden'>
         <MainTitle/>
-        <Container fluid='xxl' className='d-flex flex-grow-1 px-3 px-lg-6'>
+        <Container fluid='xxl' className='d-flex bg-info flex-grow-1 px-3 px-lg-6'>
           <Row className='justify-content-center justify-content-md-between m-0 my-auto align-content-center w-100'>
             <Col md={{order:1,span:7}} id='mainSectionInfo' className='col-12 order-2 d-flex align-items-center justify-content-center flex-column p-0'>
               <h2 className='title m-0 mb-2 text-center w-100'>Front-end developer</h2>
@@ -101,12 +100,12 @@ function App() {
           </Row>
         </Container>
       </section>      
-      <Container id='projects' fluid='xxl' className='position-relative px-3 px-lg-6'>
-        <section className='min-vh-100 d-flex flex-column'>
-          {/*<ProjectsTitle/>*/}
+      <section id='projects' className='min-vh-100 d-flex flex-column'>
+        <ProjectsTitle/>
+        <Container fluid='xxl' className='px-3 px-lg-6 flex-grow-1 d-flex flex-column'>
           <ProjectsCarousel projects={projects}/>
-        </section>
-      </Container>
+        </Container>
+      </section>
       <section id='contact' className='min-vh-100 d-flex flex-column position-relative'>
         <Container fluid='xxl' className='flex-grow-1 p-0 mt-auto d-flex flex-column px-3 px-lg-6'>
           <Stack direction='horizontal' gap={6} className='my-auto d-flex justify-content-center'>

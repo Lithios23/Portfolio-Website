@@ -23,18 +23,7 @@
 
 #projectsTitle {
     
-    @include media-breakpoint-up(md) {
-        transform: translate(-50%, -50%) rotate(-90deg);
-        top: 150vh;
-        left: 10vw;
-
-        div {
-            width: 100vh !important;
-        }
-    }
-
-    height: 6.3vw;
-    z-index: 10;
+    width: 100%;
 
     div {
         width: 100vw;

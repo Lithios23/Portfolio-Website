@@ -42,11 +42,11 @@ function ContactTitle(){
 function ProjectsTitle(){
     
     return (
-        <div id={Styles.projectsTitle} className="d-flex position-static position-md-absolute p-0">
+        <div id={Styles.projectsTitle} className="d-flex mt-5 p-0">
             <img src="./title-ends/title-end-left.png" alt='' className="d-md-block d-none"/>
             <div className="d-flex bg-secondary">
                 <span className={`my-auto w-100 bg-primary ${Styles.titleLine}`}></span>
-                <h2 className="text-primary mx-3 text-nowrap my-0">Projects</h2>
+                <h2 className="text-primary mx-3 text-nowrap my-auto">Projects</h2>
                 <span className={`my-auto w-100 bg-primary ${Styles.titleLine}`}></span>
             </div>
             <img src="./title-ends/title-end-right.png" alt='' className="d-md-block d-none"/>
