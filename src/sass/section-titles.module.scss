@@ -18,7 +18,7 @@
 }
 
 .titleLine {
-    height: min(1.3vw, 20px);
+    height: clamp(7px,1.3vw, 20px);
 }
 
 #projectsTitle {

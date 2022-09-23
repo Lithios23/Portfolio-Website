@@ -58,7 +58,7 @@ h1 {
 }
 
 h2 {
-    font-size: min(5vw,90px);
+    font-size: clamp(30px,5vw,90px);
 }
 
 p {
