@@ -9,10 +9,6 @@
         background-color: $secondary;
         color: $primary !important;
     }
-
-    &.active {
-        pointer-events: none;
-    }
     
     &.animated:hover {
         transform: rotate(45deg) translate(-10px, -10px);
