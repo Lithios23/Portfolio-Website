@@ -64,24 +64,19 @@ function App() {
   })
 
   useEffect(() => {
-    const appDiv = document.getElementsByClassName('App')[0];
-    const projectsPos = document.getElementById('projects').offsetTop
-    const contactPos = document.getElementById('contact').offsetTop
+    const projectsPos = document.getElementById('projects').offsetTop;
 
-    appDiv.addEventListener('scroll', () => {
-      switch(appDiv.scrollTop){
-        case 0:
-          setCurrentSec('about');
-          break;
-        case projectsPos:
-          setCurrentSec('projects');
-          break;
-        case contactPos:
-          setCurrentSec('contact');
-          break;
-        default:
-          break;
-      }  
+    window.addEventListener('scroll', () => {
+      console.log(window.scrollY)
+      if (window.scrollY < projectsPos/2) {
+        setCurrentSec('about');
+      }
+      else if (window.scrollY > projectsPos/2 && window.scrollY < projectsPos*1.5) {
+        setCurrentSec('projects');
+      }
+      else {
+        setCurrentSec('contact');
+      }
     })
   })
   
@@ -106,8 +101,8 @@ function App() {
           </Row>
         </Container>
       </section>      
-      <Container fluid='xxl' className='position-relative px-3 px-lg-6'>
-        <section id='projects' className='min-vh-100 d-flex flex-column'>
+      <Container id='projects' fluid='xxl' className='position-relative px-3 px-lg-6'>
+        <section className='min-vh-100 d-flex flex-column'>
           {/*<ProjectsTitle/>*/}
           <ProjectsCarousel projects={projects}/>
         </section>
