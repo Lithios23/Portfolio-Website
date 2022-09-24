@@ -106,8 +106,8 @@ function App() {
           <ProjectsCarousel projects={projects}/>
         </Container>
       </section>
-      <section id='contact' className='d-flex flex-column position-relative'>
-        <Container fluid='xxl' id='contactStackWrapper' className='flex-grow-1 m-0 d-flex flex-column px-3 px-lg-6'>
+      <section id='contact' className='d-flex flex-column'>
+        <Container fluid='xxl' id='contactStackWrapper' className='flex-grow-1 d-flex flex-column px-3 px-lg-6'>
           <Stack id='contactIconsStack' direction='horizontal' className='my-auto d-flex justify-content-center'>
             {contactIcons}
           </Stack>
