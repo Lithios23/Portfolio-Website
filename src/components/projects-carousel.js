@@ -63,6 +63,8 @@ export default function ProjectsCarousel({projects}) {
       <span key={pos}>{technology}</span>
     )
   })
+
+  const {title, description} = projects[visibleProject];
   
   return (
     <Row className='m-0 my-auto w-100 align-items-center p-0' style={{columnGap:'4%'}}>
@@ -80,8 +82,8 @@ export default function ProjectsCarousel({projects}) {
         </div>
       </Col>
       <Col className='p-0' id={Style.projectInfoContainer}>
-        <h3 className='title w-100 text-center'>{projects[visibleProject].title}</h3>
-        <p className='p-3'>{projects[visibleProject].description}</p>
+        <h3 className='title w-100 text-center'>{title}</h3>
+        <p className='p-3'>{description}</p>
         <Stack id={Style.technologies} direction='horizontal' gap={4} className='d-flex justify-content-center'>
           {projectTechs}
         </Stack>
