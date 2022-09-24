@@ -9,17 +9,17 @@ import Style from '../sass/project-carousel.module.scss'
 import Stack from 'react-bootstrap/Stack'
 import DiamondIcon from './diamond-icon'
 
-const proCont = React.createRef();
-
 export default function ProjectsCarousel({projects}) {
 
   const [carouselPosition, setCarouselPosition] = useState(0);
   const [visibleProject, setVisibleProject] = useState(0);
+
+  const proCont = React.createRef();
   
   const degreesAmount = 360/projects.length;
-  let projectsContainer;
 
   useEffect(() => {
+    let projectsContainer;
     projectsContainer = proCont.current;
     projectsContainer.addEventListener("wheel", e => {
       e.preventDefault();
