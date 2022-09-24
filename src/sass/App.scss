@@ -121,8 +121,10 @@ a {
     left: 50%;
     top: 50%;
     transform: translateY(-50%);
+    pointer-events: none;
     
     #nav {
+        pointer-events: all;
         margin-left: min(45.5vw,660px);
     }
 }
