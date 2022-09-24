@@ -115,11 +115,16 @@ a {
     }
 }
 
-#nav {
+#navWrapper {
+    
     z-index: 1000;
-    right: 22.5px;
+    left: 50%;
     top: 50%;
     transform: translateY(-50%);
+    
+    #nav {
+        margin-left: min(45.5vw,660px);
+    }
 }
 
 #projCarrouselContainer {
@@ -129,6 +134,11 @@ a {
     @include media-breakpoint-down(md){
         padding-top: 30px;
         padding-bottom: 30px;
+    }
+
+    @media (min-height: 800px) {
+        padding-top: 80px;
+        padding-bottom: 80px;
     }
 }
 

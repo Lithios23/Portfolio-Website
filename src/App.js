@@ -67,10 +67,14 @@ function App() {
     const projectsPos = document.getElementById('projects').offsetTop;
 
     window.addEventListener('scroll', () => {
+      
+      const scrollAmount = window.scrollY + window.innerHeight;
+      const documentHeight = document.body.scrollHeight;
+
       if (window.scrollY < projectsPos/2) {
         setCurrentSec('about');
       }
-      else if (window.scrollY > projectsPos/2 && window.scrollY < projectsPos*1.5) {
+      else if (window.scrollY > projectsPos/2 && (window.scrollY < projectsPos*1.5 && scrollAmount < documentHeight)) {
         setCurrentSec('projects');
       }
       else {
@@ -81,11 +85,13 @@ function App() {
   
   return (
     <div className="App bg-primary">
-      <Stack id='nav' className='position-fixed d-none d-lg-flex' gap={4}>
-        <DiamondIcon active={currentSec === 'about' ? true : false} local icon={<FontAwesomeIcon icon={faUser} size='1x' transform={{rotate: -45}}/>} url='#about' size='33px'/>
-        <DiamondIcon active={currentSec === 'projects' ? true : false} local icon={<FontAwesomeIcon icon={faBriefcase} size='1x' transform={{rotate: -45}}/>} url='#projects' size='33px'/>
-        <DiamondIcon active={currentSec === 'contact' ? true : false} local icon={<FontAwesomeIcon icon={faEnvelope} size='1x' transform={{rotate: -45}}/>} url='#contact' size='33px'/>
-      </Stack>
+      <div id='navWrapper' className='position-fixed'>
+        <Stack id='nav' className='d-none d-lg-flex' gap={4}>
+          <DiamondIcon active={currentSec === 'about' ? true : false} local icon={<FontAwesomeIcon icon={faUser} size='1x' transform={{rotate: -45}}/>} url='#about' size='33px'/>
+          <DiamondIcon active={currentSec === 'projects' ? true : false} local icon={<FontAwesomeIcon icon={faBriefcase} size='1x' transform={{rotate: -45}}/>} url='#projects' size='33px'/>
+          <DiamondIcon active={currentSec === 'contact' ? true : false} local icon={<FontAwesomeIcon icon={faEnvelope} size='1x' transform={{rotate: -45}}/>} url='#contact' size='33px'/>
+        </Stack>
+      </div>
       <section id='about' className='min-vh-100 d-flex flex-column overflow-hidden'>
         <MainTitle/>
         <Container fluid='xxl' className='d-flex flex-grow-1 px-3 px-lg-6'>
