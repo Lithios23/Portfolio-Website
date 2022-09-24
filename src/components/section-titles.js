@@ -31,7 +31,7 @@ function MainTitle(){
 function ContactTitle(){
     
     return (
-        <div className="bg-secondary mb-5 d-flex justify-content-center align-items-center p-0">
+        <div className="bg-secondary d-flex justify-content-center align-items-center p-0">
             <span className={`w-100 bg-primary ${Styles.titleLine}`}></span>
             <h2 className="text-primary mx-3 text-nowrap my-0">Contact Me!</h2>
             <span className={`w-100 bg-primary ${Styles.titleLine}`}></span>

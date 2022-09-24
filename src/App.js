@@ -59,7 +59,7 @@ function App() {
 
   const contactIcons = contact.map((contact, pos)=>{
     return (
-      <DiamondIcon animated icon={<FontAwesomeIcon icon={contact.icon} size="3x" transform={{rotate: -45}}/>} key={pos} url={contact.url} size='140px'/>
+      <DiamondIcon animated icon={<FontAwesomeIcon icon={contact.icon} transform={{rotate: -45}}/>} key={pos} url={contact.url} size='clamp(90px,11vw,189px)'/>
     )
   })
 
@@ -106,9 +106,9 @@ function App() {
           <ProjectsCarousel projects={projects}/>
         </Container>
       </section>
-      <section id='contact' className='min-vh-100 d-flex flex-column position-relative'>
-        <Container fluid='xxl' className='flex-grow-1 p-0 mt-auto d-flex flex-column px-3 px-lg-6'>
-          <Stack direction='horizontal' gap={6} className='my-auto d-flex justify-content-center'>
+      <section id='contact' className='min-vh-100 py-5 d-flex flex-column position-relative'>
+        <Container fluid='xxl' className='flex-grow-1 p-0 py-3 d-flex flex-column px-3 px-lg-6'>
+          <Stack id='contactIconsStack' direction='horizontal' className='my-auto d-flex justify-content-center'>
             {contactIcons}
           </Stack>
         </Container>

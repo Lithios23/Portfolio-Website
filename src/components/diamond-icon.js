@@ -1,5 +1,5 @@
 import React from 'react';
-import Styles from '../sass/diamond-icon.module.scss'
+import Style from '../sass/diamond-icon.module.scss'
 
 export default function ContactIcon(props) {
   
@@ -9,9 +9,11 @@ export default function ContactIcon(props) {
   
   return (
   
-    <a href={props.url} target={props.local ? '_self' : '_blank'} rel='noreferrer' style={style} className={`text-white ${props.active ? Styles.active : ''} ${Styles.diamondIcon} ${props.animated ? Styles.animated : ''} border border-4 d-flex align-items-center justify-content-center`}>
+    <div className={Style.wrapper}>
+      <a href={props.url} target={props.local ? '_self' : '_blank'} rel='noreferrer' style={style} className={`${props.active ? Style.active : ''} ${Style.diamondIcon} ${props.animated ? Style.animated : ''} text-white border border-4 d-flex align-items-center justify-content-center`}>
         {props.icon}
-    </a>
+      </a>
+    </div>
     
   )
 }

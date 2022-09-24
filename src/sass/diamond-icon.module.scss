@@ -1,16 +1,21 @@
 @import './color-variables';
 
-.diamondIcon {
-    transform: rotate(45deg);
-    transition-duration: 0.5s;
-    aspect-ratio: 1/1;
-
-    &:hover, &.active {
-        background-color: $secondary;
-        color: $primary !important;
-    }
+.wrapper {
     
-    &.animated:hover {
-        transform: rotate(45deg) translate(-10px, -10px);
+    padding: 3.1%;
+
+    .diamondIcon {    
+        transform: rotate(45deg);
+        transition-duration: 0.5s;
+        aspect-ratio: 1/1;
+    
+        &:hover, &.active {
+            background-color: $secondary;
+            color: $primary !important;
+        }
+        
+        &.animated:hover {
+            transform: rotate(45deg) translate(-10px, -10px);
+        }
     }
 }

@@ -127,3 +127,19 @@ a {
         margin-left: 23% !important;
     }
 }
+
+#contactIconsStack {
+    
+    flex-direction: column;
+    row-gap: 50px;
+    font-size: 40px;
+    
+    @include media-breakpoint-up(md){
+        flex-direction: row;
+        column-gap: clamp(80px,8vw,180px);
+
+        * {
+            font-size: clamp(1vw,4vw,85px);
+        }
+    }
+}
