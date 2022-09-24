@@ -1,23 +1,22 @@
-import React, {useEffect, useState, useRef} from 'react'
+import React, {useEffect, useState} from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons'
 import { faSquareCaretUp, faSquareCaretDown} from '@fortawesome/free-regular-svg-icons'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
-import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Style from '../sass/project-carousel.module.scss'
 import Stack from 'react-bootstrap/Stack'
 import DiamondIcon from './diamond-icon'
 
-export default function ProjectsCarrousel({projects}) {
+const proCont = React.createRef();
+
+export default function ProjectsCarousel({projects}) {
 
   const [carouselPosition, setCarouselPosition] = useState(0);
   const [visibleProject, setVisibleProject] = useState(0);
   
   const degreesAmount = 360/projects.length;
-  
-  const proCont = useRef();
   let projectsContainer;
 
   useEffect(() => {
@@ -46,7 +45,7 @@ export default function ProjectsCarrousel({projects}) {
   
   const projectsCards = projects.map((project, pos) => {
     return (
-      <>
+      <React.Fragment key={pos}>
       <div className={`${Style.projectCard}`} key={pos}>
         <img className='w-100 h-100' src={project.img} alt='Project'/>
         <Stack direction='horizontal' gap={5} className='justify-content-center w-100 h-100 opacity-0 position-absolute top-0'>
@@ -54,8 +53,8 @@ export default function ProjectsCarrousel({projects}) {
           {project.hasOwnProperty('url') ? <DiamondIcon animated icon={<FontAwesomeIcon icon={faArrowUpRightFromSquare} size="3x" transform={{rotate: -45}}/>} url={project.url} size='80px'/> : null}
         </Stack> 
       </div>
-      <span className={`w-100 ${Style.cardBack}`}></span>
-      </>
+      <span className={`w-100 ${Style.cardBack}`} key={pos + '-back'}></span>
+      </React.Fragment>
     )
   })
 
