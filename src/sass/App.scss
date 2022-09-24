@@ -123,23 +123,42 @@ a {
 }
 
 #projCarrouselContainer {
-    @include media-breakpoint-up(md) {
-        margin-left: 23% !important;
+    padding-top: 57px;
+    padding-bottom: 57px;
+
+    @include media-breakpoint-down(md){
+        padding-top: 30px;
+        padding-bottom: 30px;
     }
 }
 
-#contactIconsStack {
+#contactStackWrapper {
     
-    flex-direction: column;
-    row-gap: 50px;
-    font-size: 40px;
-    
-    @include media-breakpoint-up(md){
-        flex-direction: row;
-        column-gap: clamp(80px,8vw,180px);
+    padding-top: 160px;
+    padding-bottom: 160px;
 
-        * {
-            font-size: clamp(1vw,4vw,85px);
+    @include media-breakpoint-down(md){
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    
+    #contactIconsStack {
+    
+        flex-direction: column;
+        row-gap: 25px;
+        font-size: 40px;
+
+        @include media-breakpoint-down(sm){
+            row-gap: 50px;
+        }
+        
+        @include media-breakpoint-up(md){
+            flex-direction: row;
+            column-gap: clamp(80px,8vw,180px);
+    
+            * {
+                font-size: clamp(1vw,4vw,85px);
+            }
         }
     }
 }

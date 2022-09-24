@@ -67,7 +67,7 @@ export default function ProjectsCarrousel({projects}) {
   
   return (
     <Row className='m-0 my-auto w-100 align-items-center p-0' style={{columnGap:'4%'}}>
-      <Col md='auto' id={Style.carouselContainer} className='col-12 px-0 h-100 d-flex flex-column align-items-center mb-md-0 mb-5'>
+      <Col md='auto' id={Style.carouselContainer} className='col-12 px-0 h-100 d-flex flex-column align-items-center mb-5 mb-md-0 mb-sm-3'>
         <div id={Style.carousel} className='d-flex flex-column'>
           <button className='border-0 bg-transparent text-white' onClick={() => ScrollUp()}>
             <FontAwesomeIcon icon={faSquareCaretUp} size='2x'/>

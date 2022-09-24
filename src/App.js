@@ -100,14 +100,14 @@ function App() {
           </Row>
         </Container>
       </section>      
-      <section id='projects' className='min-vh-100 d-flex flex-column'>
+      <section id='projects' className='d-flex flex-column'>
         <ProjectsTitle/>
-        <Container fluid='xxl' className='px-3 px-lg-6 flex-grow-1 d-flex flex-column'>
+        <Container fluid='xxl' id='projCarrouselContainer' className='px-3 px-lg-6 flex-grow-1 d-flex flex-column'>
           <ProjectsCarousel projects={projects}/>
         </Container>
       </section>
-      <section id='contact' className='min-vh-100 py-5 d-flex flex-column position-relative'>
-        <Container fluid='xxl' className='flex-grow-1 p-0 py-3 d-flex flex-column px-3 px-lg-6'>
+      <section id='contact' className='d-flex flex-column position-relative'>
+        <Container fluid='xxl' id='contactStackWrapper' className='flex-grow-1 m-0 d-flex flex-column px-3 px-lg-6'>
           <Stack id='contactIconsStack' direction='horizontal' className='my-auto d-flex justify-content-center'>
             {contactIcons}
           </Stack>
