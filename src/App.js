@@ -26,7 +26,7 @@ function App() {
       repository: 'https://github.com/maxg02/Fitness-Calculator'
     },
     {
-      title: 'W3schools Homepage Clone',
+      title: 'W3schools Clone',
       img: './projects/w3sch-clone.png',
       description: 'A frontend\'s clone of the W3school\'s homepage',
       technologies: ['JavaScript', 'CSS', 'HTML'],
