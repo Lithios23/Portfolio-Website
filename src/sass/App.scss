@@ -81,6 +81,18 @@ a {
     background-position: center;
 }
 
+.body-text{
+  color: white;
+  font-size: clamp(10.5px,1.5vw,22.5px);
+}
+
+.technologies {
+  span {
+    color: $secondary;
+    font-size: clamp(11px,1.2vw,20px);
+  }
+}
+
 #mainSectionInfo {
 
     h2 {
@@ -131,21 +143,23 @@ a {
 
 #info {
   #content {
-    width: 67%;
+
+    @include media-breakpoint-up(md) {
+      width: min(66vw,956px);
+    }
 
     #info-text {
       background-color: $gray-800;
     }
-  
-    #technologies {
-      span {
-        color: $secondary;
-      }
-    }
   }
 
   #carousel-container {
-    width: 75%;
+    
+    width: 100%;
+    
+    @include media-breakpoint-up(md) {
+      width: min(74vw,1046px);
+    }
   }
 }
 
