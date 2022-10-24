@@ -108,20 +108,20 @@ function App() {
         </Container>
       </section>
       <section id='info'>
-        <Container fluid='xxl' className='d-flex align-items-center flex-column p-5'>
+        <Container fluid='xxl' className='d-flex align-items-center flex-column py-5 px-md-5 px-3'>
           <div id="content" className='d-flex align-items-center flex-column'>
             <div id='info-text' className='text-white p-4 w-100'>
-              <p>
+              <p className='body-text'>
                 Hi, i'm Max, I'm a dominican web developer, i know a few things about backend development but my fortress is frontend.
               </p>
-              <p>
+              <p className='body-text'>
                 My journey in development started in 2021 while studying cybersecurity, my first programming language was python, after some time and a few projects y started learning javascript and web development. 
               </p>
-              <p className='m-0'>
+              <p className='m-0 body-text'>
                 I am a very self-taught person, I like to learn new technologies and creating interesting projects with them. I have worked with the following technologies:
               </p>
             </div>
-            <Row id='technologies' className='w-100 m-3'>
+            <Row className='technologies w-100 m-3'>
               <Col className='text-center'>
                 <span>HTML</span>
               </Col>
