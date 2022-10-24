@@ -2,9 +2,9 @@
 @import "../../node_modules/bootstrap/scss/mixins";
 @import "../../node_modules/bootstrap/scss/variables";
 
-$itemsWidth: 170px;
+$itemsWidth: clamp(70px,15vw,200px);
 $itemsCant: 8;
-$itemsSize: 450%;
+$itemsSize: clamp(30px,5.6vw,70px);
 
 $border-gradient-width: 60px;
 
@@ -15,7 +15,7 @@ $border-gradient-width: 60px;
   
   #carousel{
 
-    width: ($itemsCant*2) * $itemsWidth;
+    width: calc(($itemsCant*2) * $itemsWidth);
     animation: scroll 18s linear infinite;
 
     .item {
@@ -40,12 +40,10 @@ $border-gradient-width: 60px;
       
       &:nth-child(8n-3) {
         color: #800AF9;
-        font-size: $itemsSize - 40;
       }
       
       &:nth-child(8n-2) {
         color: #CE679A;
-        font-size: $itemsSize - 50;
       }
       
       &:nth-child(8n-1) {
@@ -53,7 +51,6 @@ $border-gradient-width: 60px;
       }
 
       &:nth-child(8n) {
-        font-size: 60px;
         color: #8a9597;
       }
     }
@@ -84,5 +81,5 @@ $border-gradient-width: 60px;
 
 @keyframes scroll {
   from {transform: translateX(0);}
-  to {transform: translateX(calc( ($itemsWidth * -1) * $itemsCant))}
+  to {transform: translateX(calc(calc(#{$itemsWidth} * -1) * $itemsCant))}
 }
