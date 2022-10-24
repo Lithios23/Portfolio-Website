@@ -5,27 +5,26 @@
 @import "../../node_modules/bootstrap/scss/variables";
 
 #mainTitle {
-    transform: translateX(-50%) rotate(-6deg);
-    margin-left: 50%;
-    width: 110%;
+  transform: translateX(-50%) rotate(-6deg);
+  margin-left: 50%;
+  width: 110%;
 
-    #topText {
-        p {
-            font-size: clamp(8px, 1.7vw, 25px);
-            padding-right: 30vw;;
-        }
+  #topText {
+    p {
+      font-size: clamp(8px, 1.7vw, 25px);
+      padding-right: 30vw;;
     }
+  }
 }
 
 .titleLine {
-    height: clamp(7px,1.3vw, 20px);
+  height: clamp(7px,1.3vw, 20px);
 }
 
 #projectsTitle {
-    
-    width: 100%;
+  width: 100%;
 
-    div {
-        width: 100vw;
-    }
+  div {
+    width: 100vw;
+  }
 }
