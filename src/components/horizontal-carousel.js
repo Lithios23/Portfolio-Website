@@ -7,7 +7,7 @@ import { faDatabase } from "@fortawesome/free-solid-svg-icons";
 
 export default function HorizontalCarousel() {
   return (
-    <Container fluid id={Styles.wrapper} className='p-0 overflow-hidden position-relative'>
+    <Container fluid id={Styles.wrapper} className='px-0 py-2 overflow-hidden position-relative'>
       <div id={Styles.carousel} className='d-flex'>
         <div className={`${Styles.item} d-flex justify-content-center align-items-center`}>
           <FontAwesomeIcon icon={faHtml5}/>
