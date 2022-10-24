@@ -129,7 +129,27 @@ a {
     }
 }
 
-#projCarrouselContainer {
+#info {
+  #content {
+    width: 67%;
+
+    #info-text {
+      background-color: $gray-800;
+    }
+  
+    #technologies {
+      span {
+        color: $secondary;
+      }
+    }
+  }
+
+  #carousel-container {
+    width: 75%;
+  }
+}
+
+#projCarouselContainer {
     padding-top: 57px;
     padding-bottom: 57px;
 
