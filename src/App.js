@@ -101,7 +101,7 @@ function App() {
               <h2 className='title m-0 mb-2 text-center w-100'>Front-end developer</h2>
               <p className='text-white m-0'>Computer enthusiast based in Dominican Republic. Focused on web development especially front-end.</p>
             </Col>
-            <Col md={{order:2}} id='profile-img-frame' className='mb-3 mb-md-0 col-auto order-1 col-auto p-0'>
+            <Col md={{order:2}} id='profileImgFrame' className='mb-3 mb-md-0 col-auto order-1 col-auto p-0'>
               <Image src="./profile-frame.svg" alt="Profile-frame"/>
             </Col>
           </Row>
@@ -111,13 +111,13 @@ function App() {
         <Container fluid='xxl' className='d-flex align-items-center flex-column py-5 px-md-5 px-3'>
           <div id="content" className='d-flex align-items-center flex-column'>
             <div id='info-text' className='text-white p-4 w-100'>
-              <p className='body-text'>
+              <p className='bodyText'>
                 Hi, i'm Max, I'm a dominican web developer, i know a few things about backend development but my fortress is frontend.
               </p>
-              <p className='body-text'>
+              <p className='bodyText'>
                 My journey in development started in 2021 while studying cybersecurity, my first programming language was python, after some time and a few projects y started learning javascript and web development. 
               </p>
-              <p className='m-0 body-text'>
+              <p className='m-0 bodyText'>
                 I am a very self-taught person, I like to learn new technologies and creating interesting projects with them. I have worked with the following technologies:
               </p>
             </div>
@@ -148,7 +148,7 @@ function App() {
               </Col>
             </Row>
           </div>
-          <div id='carousel-container'>
+          <div id='carouselContainer'>
             <HorizontalCarousel/>
           </div>
         </Container>

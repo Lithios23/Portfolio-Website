@@ -80,7 +80,7 @@ a {
   background-position: center;
 }
 
-.body-text{
+.bodyText{
   color: white;
   font-size: clamp(10.5px,1.5vw,22.5px);
 }
@@ -110,7 +110,7 @@ a {
   }
 }
 
-#profile-img-frame {
+#profileImgFrame {
   background-image: url('../../public/profile-img.png');
   background-size: auto 94%;
   background-position: center;
@@ -149,7 +149,7 @@ a {
     }
   }
 
-  #carousel-container {
+  #carouselContainer {
     width: 100%;
     
     @include media-breakpoint-up(md) {

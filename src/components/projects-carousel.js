@@ -83,7 +83,7 @@ export default function ProjectsCarousel({projects}) {
       </Col>
       <Col className='p-0' id={Style.projectInfoContainer}>
         <h3 className='title w-100 text-center'>{title}</h3>
-        <p className='p-3 body-text'>{description}</p>
+        <p className='p-3 bodyText'>{description}</p>
         <Stack direction='horizontal' gap={4} className='d-flex justify-content-center technologies'>
           {projectTechs}
         </Stack>
