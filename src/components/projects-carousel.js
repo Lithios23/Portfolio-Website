@@ -48,9 +48,9 @@ export default function ProjectsCarousel({projects}) {
       <React.Fragment key={pos}>
       <div className={`${Style.projectCard}`} key={pos}>
         <img className='w-100 h-100' src={project.img} alt='Project'/>
-        <Stack direction='horizontal' gap={5} className='justify-content-center w-100 h-100 opacity-0 position-absolute top-0'>
-          <DiamondIcon animated icon={<FontAwesomeIcon icon={faGithub} size="3x" transform={{rotate: -45}}/>} url={project.repository} size='80px'/>
-          {project.hasOwnProperty('url') ? <DiamondIcon animated icon={<FontAwesomeIcon icon={faArrowUpRightFromSquare} size="3x" transform={{rotate: -45}}/>} url={project.url} size='80px'/> : null}
+        <Stack direction='horizontal' gap={5} className='justify-content-center position-absolute top-50 start-50 translate-middle'>
+          <DiamondIcon animated icon={<FontAwesomeIcon icon={faGithub} transform={{rotate: -45}}/>} url={project.repository} size='clamp(50px,6vw,87px)'/>
+          {project.hasOwnProperty('url') ? <DiamondIcon animated icon={<FontAwesomeIcon icon={faArrowUpRightFromSquare} transform={{rotate: -45}}/>} url={project.url} size='clamp(50px,6vw,87px)'/> : null}
         </Stack> 
       </div>
       <span className={`w-100 ${Style.cardBack}`} key={pos + '-back'}></span>

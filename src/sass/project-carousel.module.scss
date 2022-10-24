@@ -50,21 +50,34 @@ $degrees: calc(360/$numberOfCards);
             }
         
             .projectCard {
-                z-index: 4;
-                backface-visibility: hidden;
-                background-color: $gray-800;
-    
-                &:hover{
-                    & > div {
-                        opacity: 1 !important;
-                        background-color: rgba(0, 0, 0, 0.747);
-                        transition: .2s ease-in;
-                    }
+              z-index: 4;
+              backface-visibility: hidden;
+              background-color: $gray-800;
+
+              & > div {
+                height: 0%;
+                width: 0%;
+                overflow: hidden;
+
+                * {
+                  font-size: clamp(23px, 3vw, 49px);
                 }
+              }
+  
+              &:hover, &:active{
+                & > div {
+                  pointer-events: all;
+                  height: 100%;
+                  width: 100%;
+                  display: flex;
+                  background-color: rgba(0, 0, 0, 0.747);
+                  transition: .2s ease-in;
+                }
+              }
             }
         
             &::-webkit-scrollbar {
-                display: none;
+              display: none;
             }
         }
     }
