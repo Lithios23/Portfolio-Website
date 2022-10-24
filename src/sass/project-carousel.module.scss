@@ -72,19 +72,10 @@ $degrees: calc(360/$numberOfCards);
 
 #projectInfoContainer {   
     h3 {
-        font-size: clamp(20px,2.5vw,40px);
+      font-size: clamp(20px,2.5vw,40px);
     }
     
     p {
-        background-color: $gray-800;
-        color: white;
-        font-size: clamp(10.5px,1.5vw,22.5px);
-    }
-    
-    #technologies {
-        span {
-            color: $secondary;
-            font-size: clamp(11px,1vw,18px);
-        }
+      background-color: $gray-800;
     }
 }
