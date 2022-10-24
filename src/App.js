@@ -11,6 +11,7 @@ import ProjectsCarousel from './components/projects-carousel';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faUser, faBriefcase } from '@fortawesome/free-solid-svg-icons';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import HorizontalCarousel from './components/horizontal-carousel';
 
 function App() {
   
@@ -71,10 +72,10 @@ function App() {
       const scrollAmount = window.scrollY + window.innerHeight;
       const documentHeight = document.body.scrollHeight;
 
-      if (window.scrollY < projectsPos/2) {
+      if (window.scrollY < projectsPos/1.2) {
         setCurrentSec('about');
       }
-      else if (window.scrollY > projectsPos/2 && (window.scrollY < projectsPos*1.5 && scrollAmount < documentHeight)) {
+      else if (window.scrollY >= projectsPos/1.2 && (window.scrollY < projectsPos*1.4 && scrollAmount < documentHeight)) {
         setCurrentSec('projects');
       }
       else {
@@ -105,10 +106,56 @@ function App() {
             </Col>
           </Row>
         </Container>
-      </section>      
+      </section>
+      <section id='info'>
+        <Container fluid='xxl' className='d-flex align-items-center flex-column p-5'>
+          <div id="content" className='d-flex align-items-center flex-column'>
+            <div id='info-text' className='text-white p-4 w-100'>
+              <p>
+                Hi, i'm Max, I'm a dominican web developer, i know a few things about backend development but my fortress is frontend.
+              </p>
+              <p>
+                My journey in development started in 2021 while studying cybersecurity, my first programming language was python, after some time and a few projects y started learning javascript and web development. 
+              </p>
+              <p className='m-0'>
+                I am a very self-taught person, I like to learn new technologies and creating interesting projects with them. I have worked with the following technologies:
+              </p>
+            </div>
+            <Row id='technologies' className='w-100 m-3'>
+              <Col className='text-center'>
+                <span>HTML</span>
+              </Col>
+              <Col className='text-center'>
+                <span>CSS</span>
+              </Col>
+              <Col className='text-center'>
+                <span>JavaScript</span>
+              </Col>
+              <Col className='text-center'>
+                <span>React</span>
+              </Col>
+              <Col className='text-center'>
+                <span>Bootstrap</span>
+              </Col>
+              <Col className='text-center'>
+                <span>SASS</span>
+              </Col>
+              <Col className='text-center'>
+                <span>Python</span>
+              </Col>
+              <Col className='text-center'>
+                <span>SQL</span>
+              </Col>
+            </Row>
+          </div>
+          <div id='carousel-container'>
+            <HorizontalCarousel/>
+          </div>
+        </Container>
+      </section>
       <section id='projects' className='d-flex flex-column'>
         <ProjectsTitle/>
-        <Container fluid='xxl' id='projCarrouselContainer' className='px-3 px-lg-6 flex-grow-1 d-flex flex-column'>
+        <Container fluid='xxl' id='projCarouselContainer' className='px-3 px-lg-6 flex-grow-1 d-flex flex-column'>
           <ProjectsCarousel projects={projects}/>
         </Container>
       </section>
